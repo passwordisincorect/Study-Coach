@@ -93,7 +93,7 @@ STATIC_DIR = ROOT / "static"
 
 
 
-DATA_DIR = ROOT / "data"
+DATA_DIR = Path(os.environ["STUDY_COACH_DATA_DIR"]).resolve() if os.environ.get("STUDY_COACH_DATA_DIR") else ROOT / "data"
 
 
 
