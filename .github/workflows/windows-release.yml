@@ -14,12 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install GCC (MSYS2 UCRT64)
+        id: msys2
         uses: msys2/setup-msys2@v2
         with:
           msystem: UCRT64
           update: true
           install: mingw-w64-ucrt-x86_64-gcc
       - name: Build portable folder
+        env:
+          STUDY_COACH_MSYS2: ${{ steps.msys2.outputs.msys2-location }}
         shell: pwsh
         run: ./packaging/windows/build-portable.ps1
       - name: Verify packaged runtime and Auto Judge
