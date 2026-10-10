@@ -1,0 +1,59 @@
+{
+  "id": 79,
+  "title": "Tính trung bình cộng những số nguyên chia hết cho 2 hoặc 3 từ m đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/079",
+  "statement": "Bài 79: Tính trung bình cộng những số nguyên chia hết cho 2 hoặc 3 từ m đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <iomanip>\n\nusing namespace std;\n\nint main(){long long m,n;cin>>m>>n;long long ct=n/7-(m-1)/7;\n\nlong long sum=0,num=0;\n\nfor(long long i=m;i<=n;i++){if(i%2==0||i%3==0){sum+=i;num++;}}\n\nlong long tenths=num?(20*sum+num)/(2*num):0;cout<<ct<<' '<<tenths/10<<'.'<<tenths%10<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 1\n",
+      "output": "0 0.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 2\n",
+      "output": "0 2.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 2\n",
+      "output": "0 2.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 3\n",
+      "output": "0 3.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4 5\n",
+      "output": "0 4.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5 6\n",
+      "output": "0 6.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6 11\n",
+      "output": "1 8.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 30\n",
+      "output": "3 20.2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100 150\n",
+      "output": "7 125.2\n",
+      "origin": "generated"
+    }
+  ]
+}

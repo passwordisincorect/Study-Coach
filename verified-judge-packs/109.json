@@ -1,0 +1,64 @@
+{
+  "id": 109,
+  "title": "Kiểm tra một số nguyên có là số đối xứng (Palindrome)",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/109",
+  "statement": "Bài 109: Kiểm tra một số nguyên có là số đối xứng (Palindrome). Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){long long n;cin>>n;long long t=n,rev=0;while(t){rev=rev*10+t%10;t/=10;}cout<<(rev==n?\"Yes\":\"No\")<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "Yes\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "Yes\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "11\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "101\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1001\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12321\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123456\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100000001\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999999\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 38,
+  "title": "Tính mùa trong năm 2",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/038",
+  "statement": "Bài 38: Tính mùa trong năm 2. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int t;cin>>t;\n\nif(t<=20)cout<<\"Mua Dong\\n\";\n\nelse if(t<=25)cout<<\"Mua Xuan\\n\";\n\nelse if(t<=30)cout<<\"Mua Thu\\n\";\n\nelse cout<<\"Mua Ha\\n\";}",
+  "tests": [
+    {
+      "input": "0\n",
+      "output": "Mua Dong\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\n",
+      "output": "Mua Dong\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "19\n",
+      "output": "Mua Dong\n",
+      "origin": "generated"
+    },
+    {
+      "input": "20\n",
+      "output": "Mua Dong\n",
+      "origin": "generated"
+    },
+    {
+      "input": "21\n",
+      "output": "Mua Xuan\n",
+      "origin": "generated"
+    },
+    {
+      "input": "24\n",
+      "output": "Mua Xuan\n",
+      "origin": "generated"
+    },
+    {
+      "input": "26\n",
+      "output": "Mua Thu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "30\n",
+      "output": "Mua Thu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "31\n",
+      "output": "Mua Ha\n",
+      "origin": "generated"
+    },
+    {
+      "input": "49\n",
+      "output": "Mua Ha\n",
+      "origin": "generated"
+    }
+  ]
+}

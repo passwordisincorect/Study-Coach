@@ -1,0 +1,59 @@
+{
+  "id": 55,
+  "title": "Tìm số lớn nhất trong 4 số",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/055",
+  "statement": "Bài 55: Tìm số lớn nhất trong 4 số. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <algorithm>\n\nusing namespace std;\n\nint main(){long long a,b,c,d;cin>>a>>b>>c>>d;if(a==b&&b==c&&c==d)cout<<\"=\\n\";else cout<<max(max(a,b),max(c,d))<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 2 3 4\n",
+      "output": "4\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4 3 2 1\n",
+      "output": "4\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "-5 -4 -3 -2\n",
+      "output": "-2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1 -1 -1 -1\n",
+      "output": "=\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 0 0 0\n",
+      "output": "=\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1000000000 -3 100 7\n",
+      "output": "1000000000\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1000000000 -1000000000 -999999999 -1000000000\n",
+      "output": "-999999999\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 2 2 1\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 2 2 2\n",
+      "output": "2\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 279,
+  "title": "Tìm học sinh nhỏ tuổi nhất",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/279",
+  "statement": "Bài 279: Tìm học sinh nhỏ tuổi nhất. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <sstream>\n#include <map>\n#include <set>\n#include <numeric>\n#include <iomanip>\n#include <cmath>\n#include <tuple>\nusing namespace std;\nvoid row(const vector<long long>&a){for(size_t i=0;i<a.size();i++){if(i)cout<<' ';cout<<a[i];}cout<<'\\n';}\nvector<long long>ints(const string&s){vector<long long>a;istringstream in(s);long long x;while(in>>x)a.push_back(x);return a;}\nint tenth(const string&s){auto p=s.find('.');int base=stoi(s);if(p==string::npos)return base*10;int f=s[p+1]-'0';return base*10+(base<0?-f:f);}\nstring grade(int t){ostringstream o;if(t<0){o<<'-';t=-t;}o<<t/10<<'.'<<t%10;return o.str();}\npair<string,int> parseStudent(const string&s){auto p=s.find_last_of(' ');return {s.substr(0,p),tenth(s.substr(p+1))};}\nint main(){ios::sync_with_stdio(false);cin.tie(nullptr);int n;cin>>n;cin.ignore();string best;int age=999;while(n--){string line;getline(cin,line);size_t a=line.find('|'),b=line.find('|',a+1),c=line.find('|',b+1);int x=stoi(line.substr(b+1,c-b-1));\nif(x<age){age=x;best=line.substr(0,a);}}cout<<best<<'\\n';}\n",
+  "tests": [
+    {
+      "input": "1\nTran An|9.1|10|8\n",
+      "output": "Tran An\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\nTran An|9.1|11|8\nLe Binh|9.2|14|9\n",
+      "output": "Tran An\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\nTran An|9.1|12|8\nLe Binh|9.2|15|9\nNguyen Tu|9.3|18|10\n",
+      "output": "Tran An\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nTran An|9.1|13|8\nLe Binh|9.2|16|9\nNguyen Tu|9.3|19|10\nHoang Khang|9.4|10|8\n",
+      "output": "Hoang Khang\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nTran An|9.1|14|8\nLe Binh|9.2|17|9\nNguyen Tu|9.3|20|10\nHoang Khang|9.4|11|8\nLe My|9.5|14|9\n",
+      "output": "Hoang Khang\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\nTran An|9.1|15|8\n",
+      "output": "Tran An\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nTran An|9.1|16|8\nLe Binh|9.2|19|9\n",
+      "output": "Tran An\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nTran An|9.1|17|8\nLe Binh|9.2|20|9\nNguyen Tu|9.3|11|10\n",
+      "output": "Nguyen Tu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nTran An|9.1|18|8\nLe Binh|9.2|21|9\nNguyen Tu|9.3|12|10\nHoang Khang|9.4|15|8\n",
+      "output": "Nguyen Tu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nTran An|9.1|19|8\nLe Binh|9.2|10|9\nNguyen Tu|9.3|13|10\nHoang Khang|9.4|16|8\nLe My|9.5|19|9\n",
+      "output": "Le Binh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\nTran An|9.1|20|8\n",
+      "output": "Tran An\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nTran An|9.1|21|8\nLe Binh|9.2|12|9\n",
+      "output": "Le Binh\n",
+      "origin": "generated"
+    }
+  ]
+}

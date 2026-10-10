@@ -1,0 +1,79 @@
+{
+  "id": 52,
+  "title": "Đánh giá kết quả học tập theo tổng điểm",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/052",
+  "statement": "Bài 52: Đánh giá kết quả học tập theo tổng điểm. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int d;cin>>d;\n\nif(d>=80)cout<<\"Loai A\\n\"<<(d>=90?\"Xuat sac\":\"Gioi\")<<'\\n';\n\nelse if(d>=50)cout<<\"Loai B\\n\"<<(d>=65?\"Kha\":\"Trung binh\")<<'\\n';\n\nelse cout<<\"Loai C\\n\"<<(d>=35?\"Yeu\":\"Kem\")<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "Loai C\nKem\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "34\n",
+      "output": "Loai C\nKem\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "35\n",
+      "output": "Loai C\nYeu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "36\n",
+      "output": "Loai C\nYeu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "49\n",
+      "output": "Loai C\nYeu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "50\n",
+      "output": "Loai B\nTrung binh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "64\n",
+      "output": "Loai B\nTrung binh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "65\n",
+      "output": "Loai B\nKha\n",
+      "origin": "generated"
+    },
+    {
+      "input": "79\n",
+      "output": "Loai B\nKha\n",
+      "origin": "generated"
+    },
+    {
+      "input": "80\n",
+      "output": "Loai A\nGioi\n",
+      "origin": "generated"
+    },
+    {
+      "input": "89\n",
+      "output": "Loai A\nGioi\n",
+      "origin": "generated"
+    },
+    {
+      "input": "90\n",
+      "output": "Loai A\nXuat sac\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "Loai A\nXuat sac\n",
+      "origin": "generated"
+    }
+  ]
+}

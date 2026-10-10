@@ -1,0 +1,194 @@
+{
+  "id": 274,
+  "title": "Sử dụng timedelta để tính toán thời gian sau một khoảng thời gian nhất định",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/274",
+  "statement": "Bài 274: Sử dụng timedelta để tính toán thời gian sau một khoảng thời gian nhất định. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <cstdio>\n\n\n\n\n#include <iomanip>\n\n\n\n\nusing namespace std;\n\n\n\n\nint main(){int h,m,a,b;scanf(\"%d:%d %d:%d\",&h,&m,&a,&b);int t=(h*60+m+a*60+b)%(24*60);cout<<setfill('0')<<setw(2)<<t/60<<':'<<setw(2)<<t%60<<'\\n';}",
+  "tests": [
+    {
+      "input": "00:00\n00:01\n",
+      "output": "00:01\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "00:00\n01:00\n",
+      "output": "01:00\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "00:00\n03:30\n",
+      "output": "03:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "00:00\n02:20\n",
+      "output": "02:20\n",
+      "origin": "generated"
+    },
+    {
+      "input": "00:00\n00:00\n",
+      "output": "00:00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "00:00\n23:59\n",
+      "output": "23:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "06:05\n00:01\n",
+      "output": "06:06\n",
+      "origin": "generated"
+    },
+    {
+      "input": "06:05\n01:00\n",
+      "output": "07:05\n",
+      "origin": "generated"
+    },
+    {
+      "input": "06:05\n03:30\n",
+      "output": "09:35\n",
+      "origin": "generated"
+    },
+    {
+      "input": "06:05\n02:20\n",
+      "output": "08:25\n",
+      "origin": "generated"
+    },
+    {
+      "input": "06:05\n00:00\n",
+      "output": "06:05\n",
+      "origin": "generated"
+    },
+    {
+      "input": "06:05\n23:59\n",
+      "output": "06:04\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22:45\n00:01\n",
+      "output": "22:46\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22:45\n01:00\n",
+      "output": "23:45\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22:45\n03:30\n",
+      "output": "02:15\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22:45\n02:20\n",
+      "output": "01:05\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22:45\n00:00\n",
+      "output": "22:45\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22:45\n23:59\n",
+      "output": "22:44\n",
+      "origin": "generated"
+    },
+    {
+      "input": "23:59\n00:01\n",
+      "output": "00:00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "23:59\n01:00\n",
+      "output": "00:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "23:59\n03:30\n",
+      "output": "03:29\n",
+      "origin": "generated"
+    },
+    {
+      "input": "23:59\n02:20\n",
+      "output": "02:19\n",
+      "origin": "generated"
+    },
+    {
+      "input": "23:59\n00:00\n",
+      "output": "23:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "23:59\n23:59\n",
+      "output": "23:58\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12:30\n00:01\n",
+      "output": "12:31\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12:30\n01:00\n",
+      "output": "13:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12:30\n03:30\n",
+      "output": "16:00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12:30\n02:20\n",
+      "output": "14:50\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12:30\n00:00\n",
+      "output": "12:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12:30\n23:59\n",
+      "output": "12:29\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01:01\n00:01\n",
+      "output": "01:02\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01:01\n01:00\n",
+      "output": "02:01\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01:01\n03:30\n",
+      "output": "04:31\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01:01\n02:20\n",
+      "output": "03:21\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01:01\n00:00\n",
+      "output": "01:01\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01:01\n23:59\n",
+      "output": "01:00\n",
+      "origin": "generated"
+    }
+  ]
+}

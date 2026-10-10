@@ -1,0 +1,144 @@
+{
+  "id": 200,
+  "title": "Chuyển chuỗi thành mảng ký tự",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/200",
+  "statement": "Bài 200: Chuyển chuỗi thành mảng ký tự. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <sstream>\n\n#include <algorithm>\n\n#include <cctype>\n\nusing namespace std;\n\nbool letter(char c){return ('a'<=c&&c<='z')||('A'<=c&&c<='Z');}\n\nbool digit(char c){return '0'<=c&&c<='9';}\n\nint main(){\nstring s,x;getline(cin,s);int k;cin>>k;cin.ignore();getline(cin,x);if(!x.empty())s.at(k)=x[0];cout<<s<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "abc\n0\nX\n",
+      "output": "Xbc\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "ABC\n1\nX\n",
+      "output": "AXC\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "AbC\n2\nX\n",
+      "output": "AbX\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123\n0\nX\n",
+      "output": "X23\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123a\n2\nX\n",
+      "output": "12Xa\n",
+      "origin": "generated"
+    },
+    {
+      "input": "!@#\n2\nX\n",
+      "output": "!@X\n",
+      "origin": "generated"
+    },
+    {
+      "input": "@#&$%*!\n0\nX\n",
+      "output": "X#&$%*!\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a\n0\nX\n",
+      "output": "X\n",
+      "origin": "generated"
+    },
+    {
+      "input": "B\n0\nX\n",
+      "output": "X\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Z\n0\nX\n",
+      "output": "X\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a A z Z\n3\nX\n",
+      "output": "a AXz Z\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Hello World!\n11\nX\n",
+      "output": "Hello WorldX\n",
+      "origin": "generated"
+    },
+    {
+      "input": "hello world\n0\nX\n",
+      "output": "Xello world\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tran Phi An Binh\n8\nX\n",
+      "output": "Tran PhiXAn Binh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Vinh Kim Tien Giang\n18\nX\n",
+      "output": "Vinh Kim Tien GianX\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Python 123\n0\nX\n",
+      "output": "Xython 123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "One Two Three\n6\nX\n",
+      "output": "One TwX Three\n",
+      "origin": "generated"
+    },
+    {
+      "input": "  leading words\n14\nX\n",
+      "output": "  leading wordX\n",
+      "origin": "generated"
+    },
+    {
+      "input": "trailing words   \n0\nX\n",
+      "output": "Xrailing words   \n",
+      "origin": "generated"
+    },
+    {
+      "input": "  a  b  c  \n5\nX\n",
+      "output": "  a  X  c  \n",
+      "origin": "generated"
+    },
+    {
+      "input": "  spaced out  \n13\nX\n",
+      "output": "  spaced out X\n",
+      "origin": "generated"
+    },
+    {
+      "input": "radar\n0\nX\n",
+      "output": "Xadar\n",
+      "origin": "generated"
+    },
+    {
+      "input": "A1B2\n2\nX\n",
+      "output": "A1X2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "hello-hello\n10\nX\n",
+      "output": "hello-hellX\n",
+      "origin": "generated"
+    },
+    {
+      "input": "foo foo foo\n0\nX\n",
+      "output": "Xoo foo foo\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 20 30\n4\nX\n",
+      "output": "10 2X 30\n",
+      "origin": "generated"
+    }
+  ]
+}

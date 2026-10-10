@@ -1,0 +1,89 @@
+{
+  "id": 164,
+  "title": "In chuỗi với mỗi ký tự trên một dòng",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/164",
+  "statement": "Bài 164: In chuỗi với mỗi ký tự trên một dòng. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n#include <string>\nusing namespace std;\nint main(){string s;getline(cin,s);\nfor(size_t i=0;i<s.size();){unsigned char b=(unsigned char)s[i];\nsize_t len=b<128?1:b<224?2:b<240?3:4;\ncout<<s.substr(i,len)<<'\\n';i+=len;}\n}",
+  "tests": [
+    {
+      "input": "A\n",
+      "output": "A\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "abc\n",
+      "output": "a\nb\nc\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "Tran Phi An Binh\n",
+      "output": "T\nr\na\nn\n \nP\nh\ni\n \nA\nn\n \nB\ni\nn\nh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Bình\n",
+      "output": "B\nì\nn\nh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Việt Nam\n",
+      "output": "V\ni\nệ\nt\n \nN\na\nm\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123456\n",
+      "output": "1\n2\n3\n4\n5\n6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "XY Z\n",
+      "output": "X\nY\n \nZ\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a b c\n",
+      "output": "a\n \nb\n \nc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "r a d a r\n",
+      "output": "r\n \na\n \nd\n \na\n \nr\n",
+      "origin": "generated"
+    },
+    {
+      "input": "C++\n",
+      "output": "C\n+\n+\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ngôn ngữ\n",
+      "output": "n\ng\nô\nn\n \nn\ng\nữ\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123 456\n",
+      "output": "1\n2\n3\n \n4\n5\n6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ạ\n",
+      "output": "ạ\n",
+      "origin": "generated"
+    },
+    {
+      "input": "A B\n",
+      "output": "A\n \nB\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tran Phi An Bình\n",
+      "output": "T\nr\na\nn\n \nP\nh\ni\n \nA\nn\n \nB\nì\nn\nh\n",
+      "origin": "generated"
+    }
+  ]
+}

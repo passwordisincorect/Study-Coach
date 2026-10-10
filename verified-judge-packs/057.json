@@ -1,0 +1,59 @@
+{
+  "id": 57,
+  "title": "Kiểm tra 2 số a, b có là 2 kích thước của hình chữ nhật và tính chu vi, diện tích",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/057",
+  "statement": "Bài 57: Kiểm tra 2 số a, b có là 2 kích thước của hình chữ nhật và tính chu vi, diện tích. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){long long a,b;cin>>a>>b;\n\nif(a>0&&b>0){cout<<\"Day la 2 kich thuoc cua mot hinh chu nhat\\n\"<<2*(a+b)<<' '<<a*b<<'\\n';return 0;}\n\ncout<<\"Day khong phai la 2 kich thuoc cua mot hinh chu nhat\\n\";\n\nif(a<=0&&b<=0)cout<<\"a va b la so am\\n\";\n\nelse if(a<=0)cout<<\"a la so am\\n\";\n\nelse cout<<\"b la so am\\n\";}",
+  "tests": [
+    {
+      "input": "1 1\n",
+      "output": "Day la 2 kich thuoc cua mot hinh chu nhat\n4 1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4 3\n",
+      "output": "Day la 2 kich thuoc cua mot hinh chu nhat\n14 12\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "999999999 999999999\n",
+      "output": "Day la 2 kich thuoc cua mot hinh chu nhat\n3999999996 999999998000000001\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1 2\n",
+      "output": "Day khong phai la 2 kich thuoc cua mot hinh chu nhat\na la so am\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 -1\n",
+      "output": "Day khong phai la 2 kich thuoc cua mot hinh chu nhat\nb la so am\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-3 -4\n",
+      "output": "Day khong phai la 2 kich thuoc cua mot hinh chu nhat\na va b la so am\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-999999999 1\n",
+      "output": "Day khong phai la 2 kich thuoc cua mot hinh chu nhat\na la so am\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 -999999999\n",
+      "output": "Day khong phai la 2 kich thuoc cua mot hinh chu nhat\nb la so am\n",
+      "origin": "generated"
+    },
+    {
+      "input": "8 12\n",
+      "output": "Day la 2 kich thuoc cua mot hinh chu nhat\n40 96\n",
+      "origin": "generated"
+    }
+  ]
+}

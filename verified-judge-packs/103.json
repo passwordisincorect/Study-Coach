@@ -1,0 +1,59 @@
+{
+  "id": 103,
+  "title": "In tam giác số",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/103",
+  "statement": "Bài 103: In tam giác số. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){int n;cin>>n;for(int i=1;i<=n;i++){for(int j=1;j<=i;j++){if(j>1)cout<<' ';cout<<j;}cout<<'\\n';}}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "1\n1 2\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4\n",
+      "output": "1\n1 2\n1 2 3\n1 2 3 4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\n",
+      "output": "1\n1 2\n1 2 3\n1 2 3 4\n1 2 3 4 5\n1 2 3 4 5 6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\n",
+      "output": "1\n1 2\n1 2 3\n1 2 3 4\n1 2 3 4 5\n1 2 3 4 5 6\n1 2 3 4 5 6 7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "8\n",
+      "output": "1\n1 2\n1 2 3\n1 2 3 4\n1 2 3 4 5\n1 2 3 4 5 6\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7 8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9\n",
+      "output": "1\n1 2\n1 2 3\n1 2 3 4\n1 2 3 4 5\n1 2 3 4 5 6\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7 8\n1 2 3 4 5 6 7 8 9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "1\n1 2\n1 2 3\n1 2 3 4\n1 2 3 4 5\n1 2 3 4 5 6\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7 8\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9 10\n",
+      "origin": "generated"
+    },
+    {
+      "input": "20\n",
+      "output": "1\n1 2\n1 2 3\n1 2 3 4\n1 2 3 4 5\n1 2 3 4 5 6\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7 8\n1 2 3 4 5 6 7 8 9\n1 2 3 4 5 6 7 8 9 10\n1 2 3 4 5 6 7 8 9 10 11\n1 2 3 4 5 6 7 8 9 10 11 12\n1 2 3 4 5 6 7 8 9 10 11 12 13\n1 2 3 4 5 6 7 8 9 10 11 12 13 14\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\n",
+      "origin": "generated"
+    }
+  ]
+}

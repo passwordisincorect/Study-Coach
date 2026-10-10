@@ -1,0 +1,64 @@
+{
+  "id": 174,
+  "title": "Chuyển mã ASCII sang ký tự",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/174",
+  "statement": "Bài 174: Chuyển mã ASCII sang ký tự. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <vector>\n\n#include <algorithm>\n\n#include <cctype>\n\n#include <sstream>\n\nusing namespace std;\n\nvector<string> chars(const string&s){\n\n vector<string> out;for(size_t i=0;i<s.size();){unsigned char b=s[i];\n\n size_t len=b<128?1:b<224?2:b<240?3:4;\n\n out.push_back(s.substr(i,len));i+=len;}return out;\n\n}\n\nint main(){\nint n;cin>>n;cout<<(char)n<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "33\n",
+      "output": "!\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "35\n",
+      "output": "#\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "48\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "49\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "50\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "57\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "65\n",
+      "output": "A\n",
+      "origin": "generated"
+    },
+    {
+      "input": "90\n",
+      "output": "Z\n",
+      "origin": "generated"
+    },
+    {
+      "input": "97\n",
+      "output": "a\n",
+      "origin": "generated"
+    },
+    {
+      "input": "126\n",
+      "output": "~\n",
+      "origin": "generated"
+    }
+  ]
+}

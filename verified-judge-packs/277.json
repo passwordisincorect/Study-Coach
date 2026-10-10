@@ -1,0 +1,54 @@
+{
+  "id": 277,
+  "title": "Tính chu vi và diện tích tam giác trong mặt phẳng tọa độ Oxy",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/277",
+  "statement": "Bài 277: Tính chu vi và diện tích tam giác trong mặt phẳng tọa độ Oxy. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <cmath>\n\n\n\n\n#include <iomanip>\n\n\n\n\nusing namespace std;\n\n\n\n\nstruct Point{long double x,y;};\n\n\n\n\nlong double length(Point a,Point b){return hypotl(a.x-b.x,a.y-b.y);}\n\n\n\n\nint main(){Point a,b,c;cin>>a.x>>a.y>>b.x>>b.y>>c.x>>c.y;\n\n\n\n\nlong double cross=(b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);\n\n\n\n\nif(fabsl(cross)<1e-15L){cout<<\"-1\\n\";return 0;}\n\n\n\n\nlong double perimeter=length(a,b)+length(b,c)+length(c,a);\n\n\n\n\nlong double area=fabsl(cross)/2;\n\n\n\n\ncout<<fixed<<setprecision(1)<<perimeter<<' '<<setprecision(2)<<area<<'\\n';}",
+  "tests": [
+    {
+      "input": "0 0 3 0 0 4\n",
+      "output": "12.0 6.00\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "0 0 1 0 0 1\n",
+      "output": "3.4 0.50\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "0 0 1 1 2 2\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 2 1 2 3 5\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-3 0 -3 4 0 0\n",
+      "output": "12.0 6.00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 0 6 0 0 8\n",
+      "output": "24.0 24.00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 0 4 0 4 4\n",
+      "output": "12.0 6.00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0.1 0.1 1.1 0.1 0.1 1.1\n",
+      "output": "3.4 0.50\n",
+      "origin": "generated"
+    }
+  ]
+}

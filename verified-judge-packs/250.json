@@ -1,0 +1,159 @@
+{
+  "id": 250,
+  "title": "Tìm các dòng chứa toàn số âm",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/250",
+  "statement": "Bài 250: Tìm các dòng chứa toàn số âm. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <map>\n#include <sstream>\n#include <string>\n#include <iomanip>\n#include <cmath>\nusing namespace std;\nusing Mat=vector<vector<long long>>;\nbool prime(long long n){if(n<2)return false;for(long long d=2;d*d<=n;d++)if(n%d==0)return false;return true;}\nbool square(long long n){if(n<0)return false;long long d=sqrtl(n);return d*d==n||(d+1)*(d+1)==n;}\nvoid row(const vector<long long>&a){for(size_t i=0;i<a.size();i++){if(i)cout<<' ';cout<<a[i];}cout<<'\\n';}\nvoid printMat(const Mat&a){for(auto&r:a)row(r);}\nint main(){ios::sync_with_stdio(false);cin.tie(nullptr);Mat a;string line;while(getline(cin,line)){istringstream ss(line);long long v;vector<long long>row;while(ss>>v)row.push_back(v);if(!row.empty())a.push_back(row);}int m=(int)a.size(),n=(int)a[0].size(),k=0;vector<long long>indices;for(int i=0;i<m;i++)if(all_of(a[i].begin(),a[i].end(),[](long long x){return x<0;}))indices.push_back(i);\nif(indices.empty())cout<<\"-1\\n\";else row(indices);}\n",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "-1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "0\n",
+      "output": "-1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-3\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 2\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 0\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-3 -2\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\n2\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 2\n3 4\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4 3\n2 1\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 1\n2 0\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 1\n1 1\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 2 3\n4 5 6\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 3 5\n7 11 13\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-3 -2 -1\n0 2 4\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "8 5 3\n2 5 1\n9 0 -1\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 0 0\n0 0 0\n0 0 0\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 2 3\n4 5 6\n7 8 9\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9 8 7\n6 5 4\n3 2 1\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 1 4\n9 16 25\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 2 1\n3 3 1\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1 -2 -3\n-4 -5 -6\n",
+      "output": "0 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4 4 4 4\n1 2 3 4\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 2 1 2\n1 2 1 2\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 20 30 40\n50 60 70 80\n90 100 110 120\n",
+      "output": "-1\n",
+      "origin": "generated"
+    }
+  ]
+}

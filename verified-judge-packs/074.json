@@ -1,0 +1,54 @@
+{
+  "id": 74,
+  "title": "In những số nguyên chẵn từ m đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/074",
+  "statement": "Bài 74: In những số nguyên chẵn từ m đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int m,n;cin>>m>>n;int k=(m%2==0?m:m+1);if(k>n){cout<<\"-\\n\";return 0;}\n\nfor(int i=k;i<=n;i+=2){if(i>k)cout<<' ';cout<<i;}cout<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 1\n",
+      "output": "-\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 2\n",
+      "output": "2\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 2\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 3\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 4\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5 12\n",
+      "output": "6 8 10 12\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100 105\n",
+      "output": "100 102 104\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999 999999\n",
+      "output": "-\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Study Coach</title>
+  <style>
+    body{font:14px system-ui,sans-serif;width:320px;margin:0;padding:16px;color:#172033}
+    h1{font-size:18px;margin:0 0 8px}p{line-height:1.45;color:#5e6b7f}
+    .card{border:1px solid #dfe4ec;border-radius:12px;padding:12px;margin:12px 0}
+    button{width:100%;border:0;border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer;margin-top:8px}
+    .primary{background:#2238d4;color:white}.secondary{background:#edf0f5;color:#28364d}
+    .status{font-size:12px;color:#667085;margin-top:8px}.ok{color:#08754d}.bad{color:#a52720}
+    code{word-break:break-all;font-size:11px}
+  </style>
+</head>
+<body>
+  <h1>Study Coach</h1>
+  <p>Dùng chung cho Brave / Edge / Chrome. Chỉ theo dõi playlist C++ mà bạn chủ động chọn.</p>
+  <div class="card">
+    <strong id="pageTitle">Đang kiểm tra tab…</strong>
+    <p id="pageInfo"></p>
+    <button id="track" class="primary" type="button">Dùng playlist này làm khóa C++</button>
+    <button id="stop" class="secondary" type="button">Ngừng theo dõi playlist</button>
+    <div id="message" class="status"></div>
+  </div>
+  <div class="card">
+    <strong>Đồng bộ gần nhất</strong>
+    <div id="sync" class="status">Chưa có dữ liệu.</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

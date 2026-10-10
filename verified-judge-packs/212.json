@@ -1,0 +1,59 @@
+{
+  "id": 212,
+  "title": "Sắp xếp danh sách tên theo bảng chữ cái",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/212",
+  "statement": "Bài 212: Sắp xếp danh sách tên theo bảng chữ cái. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <string>\n\n\n\n\n#include <vector>\n\n\n\n\n#include <algorithm>\n\n\n\n\n#include <sstream>\n\n\n\n\n#include <limits>\n\n\n\n\nusing namespace std;\n\n\n\n\nint main(){\nint n;cin>>n;cin.ignore(numeric_limits<streamsize>::max(),'\\n');\n\n\n\n\nvector<string> names(n);for(auto &s:names)getline(cin,s);\n\n\n\n\nauto key=[](const string&s){size_t p=s.rfind(' ');return make_pair(p==string::npos?s:s.substr(p+1),p==string::npos?string(\"\"):s.substr(0,p));};\n\n\n\n\nstable_sort(names.begin(),names.end(),[&](const string&a,const string&b){return key(a)<key(b);});\n\n\n\n\nfor(auto &s:names)cout<<s<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "1\nAna\n",
+      "output": "Ana\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\nAn A\nBinh B\n",
+      "output": "An A\nBinh B\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4\nC D\nA B\nQ T\nM X\n",
+      "output": "A B\nC D\nQ T\nM X\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nTran Phi An Binh\nNguyen Thanh Binh\nLe An\nAn\n",
+      "output": "An\nLe An\nNguyen Thanh Binh\nTran Phi An Binh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nabc\ndef\nxyz\nHello\nabcde\n",
+      "output": "Hello\nabc\nabcde\ndef\nxyz\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nOne Two\nTwo One\nThree Three\n",
+      "output": "Two One\nThree Three\nOne Two\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nVinh Kim\nTien Giang\nHo Chi Minh\n",
+      "output": "Tien Giang\nVinh Kim\nHo Chi Minh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\naaa\nbb\ncccc\nd\nee\n",
+      "output": "aaa\nbb\ncccc\nd\nee\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nNguyen Van A\nLe Van C\nTran Van B\nDo Van A\n",
+      "output": "Do Van A\nNguyen Van A\nTran Van B\nLe Van C\n",
+      "origin": "generated"
+    }
+  ]
+}

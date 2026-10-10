@@ -1,0 +1,69 @@
+{
+  "id": 116,
+  "title": "Tính x^n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/116",
+  "statement": "Bài 116: Tính x^n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){long long x;int n;cin>>x>>n;long long p=1;for(int i=0;i<n;i++)p*=x;cout<<p<<'\\n';}",
+  "tests": [
+    {
+      "input": "0 0\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "0 9\n",
+      "output": "0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 0\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 9\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1 9\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 0\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 9\n",
+      "output": "512\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-2 8\n",
+      "output": "256\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-2 9\n",
+      "output": "-512\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99 9\n",
+      "output": "913517247483640899\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-99 9\n",
+      "output": "-913517247483640899\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 280,
+  "title": "Sắp xếp danh sách học sinh",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/280",
+  "statement": "Bài 280: Sắp xếp danh sách học sinh. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n#include <string>\n\n\n\n#include <vector>\n\n\n\n#include <algorithm>\n\n\n\n#include <sstream>\n\n\n\n#include <map>\n\n\n\n#include <set>\n\n\n\n#include <numeric>\n\n\n\n#include <iomanip>\n\n\n\n#include <cmath>\n\n\n\n#include <tuple>\n\n\n\nusing namespace std;\n\n\n\nvoid row(const vector<long long>&a){for(size_t i=0;i<a.size();i++){if(i)cout<<' ';cout<<a[i];}cout<<'\\n';}\n\n\n\nvector<long long>ints(const string&s){vector<long long>a;istringstream in(s);long long x;while(in>>x)a.push_back(x);return a;}\n\n\n\nint tenth(const string&s){auto p=s.find('.');int base=stoi(s);if(p==string::npos)return base*10;int f=s[p+1]-'0';return base*10+(base<0?-f:f);}\n\n\n\nstring grade(int t){ostringstream o;if(t<0){o<<'-';t=-t;}o<<t/10<<'.'<<t%10;return o.str();}\n\n\n\npair<string,int> parseStudent(const string&s){auto p=s.find_last_of(' ');return {s.substr(0,p),tenth(s.substr(p+1))};}\n\n\n\nint main(){ios::sync_with_stdio(false);cin.tie(nullptr);int n;cin>>n;cin.ignore();vector<string>a(n);for(auto&x:a)getline(cin,x);\n\n\n\nauto key=[](const string&s){vector<string>fields;istringstream in(s);string word;size_t p=0,prev=0;\n\n\n\nwhile((p=s.find('|',prev))!=string::npos){fields.push_back(s.substr(prev,p-prev));prev=p+1;}fields.push_back(s.substr(prev));\n\n\n\nstring name=fields[1];auto pos=name.find_last_of(' ');\n\n\n\nstring last=pos==string::npos?name:name.substr(pos+1),first=pos==string::npos?\"\":name.substr(0,pos);\n\n\n\nreturn make_tuple(last,first,-stoi(fields[5]));};\n\n\n\nstable_sort(a.begin(),a.end(),[&](const string&x,const string&y){return key(x)<key(y);});\n\n\n\nfor(auto&s:a)cout<<s<<'\\n';}\n",
+  "tests": [
+    {
+      "input": "1\nHS01|Nguyen An|2005|Nu|7|8|6\n",
+      "output": "HS01|Nguyen An|2005|Nu|7|8|6\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\nHS02|Tran An|2007|Nu|6|8|7\nHS03|Le An|2004|Nam|8|7|8\n",
+      "output": "HS03|Le An|2004|Nam|8|7|8\nHS02|Tran An|2007|Nu|6|8|7\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\nHS03|Le An|2004|Nam|8|7|8\nHS04|Tran Phi Binh An|2003|Nam|7|8|7\nHS05|Tran An|2006|Nam|6|9|7\n",
+      "output": "HS03|Le An|2004|Nam|8|7|8\nHS05|Tran An|2006|Nam|6|9|7\nHS04|Tran Phi Binh An|2003|Nam|7|8|7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nHS04|Tran Phi Binh An|2003|Nam|7|8|7\nHS05|Tran An|2006|Nam|6|9|7\nHS06|Tran Nam|2002|Nam|6|10|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\n",
+      "output": "HS05|Tran An|2006|Nam|6|9|7\nHS04|Tran Phi Binh An|2003|Nam|7|8|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\nHS06|Tran Nam|2002|Nam|6|10|7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nHS05|Tran An|2006|Nam|6|9|7\nHS06|Tran Nam|2002|Nam|6|10|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\nHS08|Bui An|2003|Nu|9|10|10\nHS01|Nguyen An|2005|Nu|7|8|6\n",
+      "output": "HS08|Bui An|2003|Nu|9|10|10\nHS01|Nguyen An|2005|Nu|7|8|6\nHS05|Tran An|2006|Nam|6|9|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\nHS06|Tran Nam|2002|Nam|6|10|7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\nHS06|Tran Nam|2002|Nam|6|10|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\nHS08|Bui An|2003|Nu|9|10|10\nHS01|Nguyen An|2005|Nu|7|8|6\nHS02|Tran An|2007|Nu|6|8|7\nHS03|Le An|2004|Nam|8|7|8\n",
+      "output": "HS08|Bui An|2003|Nu|9|10|10\nHS03|Le An|2004|Nam|8|7|8\nHS01|Nguyen An|2005|Nu|7|8|6\nHS02|Tran An|2007|Nu|6|8|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\nHS06|Tran Nam|2002|Nam|6|10|7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\nHS07|Nguyen Nam|2002|Nam|7|7|8\nHS08|Bui An|2003|Nu|9|10|10\nHS01|Nguyen An|2005|Nu|7|8|6\nHS02|Tran An|2007|Nu|6|8|7\nHS03|Le An|2004|Nam|8|7|8\nHS04|Tran Phi Binh An|2003|Nam|7|8|7\nHS05|Tran An|2006|Nam|6|9|7\n",
+      "output": "HS08|Bui An|2003|Nu|9|10|10\nHS03|Le An|2004|Nam|8|7|8\nHS01|Nguyen An|2005|Nu|7|8|6\nHS05|Tran An|2006|Nam|6|9|7\nHS02|Tran An|2007|Nu|6|8|7\nHS04|Tran Phi Binh An|2003|Nam|7|8|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "8\nHS08|Bui An|2003|Nu|9|10|10\nHS01|Nguyen An|2005|Nu|7|8|6\nHS02|Tran An|2007|Nu|6|8|7\nHS03|Le An|2004|Nam|8|7|8\nHS04|Tran Phi Binh An|2003|Nam|7|8|7\nHS05|Tran An|2006|Nam|6|9|7\nHS06|Tran Nam|2002|Nam|6|10|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\n",
+      "output": "HS08|Bui An|2003|Nu|9|10|10\nHS03|Le An|2004|Nam|8|7|8\nHS01|Nguyen An|2005|Nu|7|8|6\nHS05|Tran An|2006|Nam|6|9|7\nHS02|Tran An|2007|Nu|6|8|7\nHS04|Tran Phi Binh An|2003|Nam|7|8|7\nHS07|Nguyen Nam|2002|Nam|7|7|8\nHS06|Tran Nam|2002|Nam|6|10|7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\nHS01|Nguyen An|2015|Nu|7|8|6\n",
+      "output": "HS01|Nguyen An|2015|Nu|7|8|6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nHS02|Tran An|2017|Nu|6|8|7\nHS03|Le An|2014|Nam|8|7|8\n",
+      "output": "HS03|Le An|2014|Nam|8|7|8\nHS02|Tran An|2017|Nu|6|8|7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nHS03|Le An|2014|Nam|8|7|8\nHS04|Tran Phi Binh An|2013|Nam|7|8|7\nHS05|Tran An|2016|Nam|6|9|7\n",
+      "output": "HS03|Le An|2014|Nam|8|7|8\nHS05|Tran An|2016|Nam|6|9|7\nHS04|Tran Phi Binh An|2013|Nam|7|8|7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nHS04|Tran Phi Binh An|2013|Nam|7|8|7\nHS05|Tran An|2016|Nam|6|9|7\nHS06|Tran Nam|2012|Nam|6|10|7\nHS07|Nguyen Nam|2012|Nam|7|7|8\n",
+      "output": "HS05|Tran An|2016|Nam|6|9|7\nHS04|Tran Phi Binh An|2013|Nam|7|8|7\nHS07|Nguyen Nam|2012|Nam|7|7|8\nHS06|Tran Nam|2012|Nam|6|10|7\n",
+      "origin": "generated"
+    }
+  ]
+}

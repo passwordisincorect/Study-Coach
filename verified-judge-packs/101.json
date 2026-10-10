@@ -1,0 +1,59 @@
+{
+  "id": 101,
+  "title": "In hình tam giác vuông cân bằng dấu *",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/101",
+  "statement": "Bài 101: In hình tam giác vuông cân bằng dấu *. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){int h;cin>>h;for(int i=1;i<=h;i++){for(int j=0;j<i;j++)cout<<'*';cout<<'\\n';}}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "*\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "*\n**\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\n",
+      "output": "*\n**\n***\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n",
+      "output": "*\n**\n***\n****\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\n",
+      "output": "*\n**\n***\n****\n*****\n******\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\n",
+      "output": "*\n**\n***\n****\n*****\n******\n*******\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9\n",
+      "output": "*\n**\n***\n****\n*****\n******\n*******\n********\n*********\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "*\n**\n***\n****\n*****\n******\n*******\n********\n*********\n**********\n",
+      "origin": "generated"
+    },
+    {
+      "input": "20\n",
+      "output": "*\n**\n***\n****\n*****\n******\n*******\n********\n*********\n**********\n***********\n************\n*************\n**************\n***************\n****************\n*****************\n******************\n*******************\n********************\n",
+      "origin": "generated"
+    }
+  ]
+}

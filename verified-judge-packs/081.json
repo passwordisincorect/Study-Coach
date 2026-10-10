@@ -1,0 +1,59 @@
+{
+  "id": 81,
+  "title": "Tìm ước chung lớn nhất của hai số nguyên a và b",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/081",
+  "statement": "Bài 81: Tìm ước chung lớn nhất của hai số nguyên a và b. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n#include <numeric>\n\n\nusing namespace std;\n\n\nint main(){long long a,b;cin>>a>>b;cout<<gcd(a,b)<<'\\n';}",
+  "tests": [
+    {
+      "input": "12 18\n",
+      "output": "6\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "-12 18\n",
+      "output": "6\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "12 -18\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-12 -18\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 12345678\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999937 999999937\n",
+      "output": "999999937\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 15\n",
+      "output": "15\n",
+      "origin": "generated"
+    },
+    {
+      "input": "15 0\n",
+      "output": "15\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999937 999999929\n",
+      "output": "1\n",
+      "origin": "generated"
+    }
+  ]
+}

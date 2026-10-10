@@ -1,0 +1,59 @@
+{
+  "id": 59,
+  "title": "Tính tổng các chữ số chẵn của một số có 8 chữ số",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/059",
+  "statement": "Bài 59: Tính tổng các chữ số chẵn của một số có 8 chữ số. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\nusing namespace std;\n\nint main(){string s;cin>>s;int sum=0;bool found=false;\n\nfor(char c:s){int d=c-'0';if(d%2==0){sum+=d;found=true;}}\n\nif(found)cout<<sum<<'\\n';else cout<<\"-\\n\";}",
+  "tests": [
+    {
+      "input": "24682468\n",
+      "output": "40\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "13571357\n",
+      "output": "-\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "00000000\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11111111\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "20000000\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10101010\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12345678\n",
+      "output": "20\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99999998\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "80808080\n",
+      "output": "32\n",
+      "origin": "generated"
+    }
+  ]
+}

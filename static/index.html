@@ -1,0 +1,1811 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+<html lang="vi">
+
+
+
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+
+  <meta charset="utf-8">
+
+
+
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+  <meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+
+  <title>C++ Study Coach</title>
+
+
+
+
+
+
+
+
+  <link rel="icon" href="data:,">
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="/styles.css">
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+  <div class="app-shell">
+
+
+
+
+
+
+
+
+    <header class="topbar">
+
+
+
+
+
+
+
+
+      <a class="brand" href="/" aria-label="C++ Study Coach">
+
+
+
+
+
+
+
+
+        <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+
+
+
+
+
+
+
+
+        <span>
+
+
+
+
+
+
+
+
+          <strong>C++ Study Coach</strong>
+
+
+
+
+
+
+
+
+          <small>300 bài thực hành</small>
+
+
+
+
+
+
+
+
+        </span>
+
+
+
+
+
+
+
+
+      </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="topbar-actions">
+
+
+
+
+
+
+
+
+        <div class="theme-picker" aria-label="Chọn giao diện">
+
+
+
+
+
+
+
+
+          <button id="themeLight" type="button" class="theme-choice" aria-pressed="true">☀️ <span>Sáng</span></button>
+
+
+
+
+
+
+
+
+          <button id="themeDark" type="button" class="theme-choice" aria-pressed="false">🌙 <span>Tối</span></button>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="server-pill" id="serverStatus" role="status">Đang kết nối…</div>
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="page">
+
+
+
+
+
+
+
+
+      <section class="focus-panel" aria-labelledby="nextTitle">
+
+
+
+
+
+
+
+
+        <div class="focus-copy">
+
+
+
+
+
+
+
+
+          <p class="context-line">Bước tiếp theo của bạn</p>
+
+
+
+
+
+
+
+
+          <h1 id="nextTitle">Đang phân tích tiến độ…</h1>
+
+
+
+
+
+
+
+
+          <p id="recommendationReason" class="focus-reason">Study Coach đang chọn bài phù hợp nhất.</p>
+          <p class="source-line">Danh mục bài tập theo <a href="https://xn--300bicode-t1a.vn/" target="_blank" rel="noopener">300bàicode.vn</a>.</p>
+
+
+
+
+
+
+
+
+          <div class="focus-actions">
+
+
+
+
+
+
+
+
+            <button id="useRecommendation" type="button" class="button button-primary">Làm bài này</button>
+
+
+
+
+
+
+
+
+            <div id="sourceProgress" class="source-progress" hidden>
+              <p id="sourceProgressTitle" class="source-progress-title"></p>
+              <p>Bài chưa có bộ chấm local. Nộp bài trên <a id="sourceOpenLink" target="_blank" rel="noopener noreferrer" href="#">trang đề gốc</a>.
+              Nếu kết quả hiện Accepted (AC), bạn có thể tự xác nhận để Study Coach chuyển bài.
+              Việc này <strong>không phải xác minh tự động</strong> và không dùng làm bằng chứng nhảy bài.</p>
+              <label class="source-progress-check"><input id="sourceConfirm" type="checkbox"> Tôi đã thấy kết quả Accepted (AC) trên trang gốc.</label>
+              <div class="source-progress-actions">
+                <button id="sourceRecordAC" class="button button-primary" type="button" disabled>Ghi nhận AC nguồn ngoài</button>
+                <button id="sourceClose" class="button button-secondary" type="button">Đóng</button>
+              </div>
+              <p id="sourceStatus" role="status" aria-live="polite"></p>
+            </div>
+            <span id="recommendationAction" class="decision-badge">—</span>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="progress-summary" aria-label="Tóm tắt tiến độ">
+
+
+
+
+
+
+
+
+          <div class="summary-item">
+
+
+
+
+
+
+
+
+            <strong id="attemptedCount">0</strong>
+
+
+
+
+
+
+
+
+            <span>đã thử</span>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+          <div class="summary-item">
+
+
+
+
+
+
+
+
+            <strong id="masteredCount">0</strong>
+
+
+
+
+
+
+
+
+            <span>tự làm được</span>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+          <div class="summary-item summary-wide">
+
+
+
+
+
+
+
+
+            <div class="summary-line">
+
+
+
+
+
+
+
+
+              <span>Tổng tiến độ</span>
+
+
+
+
+
+
+
+
+              <strong id="masteredPercent">0%</strong>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="progress-track" aria-hidden="true"><div id="progressBar"></div></div>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+          <div class="video-chip" id="currentVideo">Video #13 · Vector trong C++ · 100%</div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="learning-section" aria-labelledby="journeyTitle">
+
+
+
+
+
+
+
+
+        <div class="section-heading">
+
+
+
+
+
+
+
+
+          <div>
+
+
+
+
+
+
+
+
+            <h2 id="journeyTitle">Lộ trình hiện tại</h2>
+
+
+
+
+
+
+
+
+            <p>Không cần cày tuần tự 300 bài. Hệ thống sẽ dừng, luyện thêm hoặc cho bạn tiến tiếp dựa trên kết quả thật.</p>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div id="topicGrid" class="topic-track" aria-label="Tiến độ theo chủ đề"></div>
+
+
+
+
+
+
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="dashboard-grid">
+
+
+
+
+
+
+
+
+        <section class="library-section" aria-labelledby="libraryTitle">
+
+
+
+
+
+
+
+
+          <div class="section-heading library-heading">
+
+
+
+
+
+
+
+
+            <div>
+
+
+
+
+
+
+
+
+              <h2 id="libraryTitle">Bài luyện</h2>
+
+
+
+
+
+
+
+
+              <p>Chọn một bài hoặc đi theo đề xuất của Study Coach.</p>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="filters">
+
+
+
+
+
+
+
+
+              <input id="searchInput" type="search" placeholder="Tìm bài…" aria-label="Tìm bài">
+
+
+
+
+
+
+
+
+              <select id="topicFilter" aria-label="Lọc theo chủ đề">
+
+
+
+
+
+
+
+
+                <option value="">Tất cả chủ đề</option>
+
+
+
+
+
+
+
+
+              </select>
+
+
+
+
+
+
+
+
+              <select id="statusFilter" aria-label="Lọc theo trạng thái">
+
+
+
+
+
+
+
+
+                <option value="">Tất cả trạng thái</option>
+
+
+
+
+
+
+
+
+                <option value="new">Chưa làm</option>
+
+
+
+
+
+
+
+
+                <option value="learning">Đang luyện</option>
+
+
+
+
+
+
+
+
+                <option value="mastered">Đã đạt</option>
+
+
+
+
+
+
+
+
+              </select>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+          <div id="exerciseList" class="exercise-list"></div>
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <aside class="side-column">
+
+
+
+
+
+
+
+
+          <section class="side-section" aria-labelledby="courseTitle">
+
+
+
+
+
+
+
+
+            <div class="side-title">
+
+
+
+
+
+
+
+
+              <h2 id="courseTitle">Video đang học</h2>
+
+
+
+
+
+
+
+
+              <span class="side-status">Lý thuyết</span>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <form id="videoForm" class="video-form">
+
+
+
+
+
+
+
+
+              <label>
+
+
+
+
+
+
+
+
+                Video #
+
+
+
+
+
+
+
+
+                <input id="videoNumber" type="number" min="1" value="13" required>
+
+
+
+
+
+
+
+
+              </label>
+
+
+
+
+
+
+
+
+              <label class="video-title-field">
+
+
+
+
+
+
+
+
+                Tên video
+
+
+
+
+
+
+
+
+                <input id="videoTitle" type="text" value="Vector trong C++" required>
+
+
+
+
+
+
+
+
+              </label>
+
+
+
+
+
+
+
+
+              <label>
+
+
+
+
+
+
+
+
+                Đã xem
+
+
+
+
+
+
+
+
+                <div class="percent-input"><input id="videoPercent" type="number" min="0" max="100" value="100"><span>%</span></div>
+
+
+
+
+
+
+
+
+              </label>
+
+
+
+
+
+
+
+
+              <button class="button button-secondary" type="submit">Cập nhật</button>
+
+
+
+
+
+
+
+
+              <p id="videoMessage" class="form-message" aria-live="polite"></p>
+
+
+
+
+
+
+
+
+            </form>
+
+
+
+
+
+
+
+
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <section class="side-section" aria-labelledby="recentTitle">
+
+
+
+
+
+
+
+
+            <div class="side-title">
+
+
+
+
+
+
+
+
+              <h2 id="recentTitle">Gần đây</h2>
+
+
+
+
+
+
+
+
+              <span class="side-status">Tự chấm</span>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div id="recentList" class="recent-list"></div>
+
+
+
+
+
+
+
+
+          </section>
+
+
+
+
+
+
+
+
+        </aside>
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="exerciseModal" class="exercise-modal" hidden>
+
+
+
+
+
+
+
+
+    <div class="exercise-shell" role="dialog" aria-modal="true" aria-labelledby="workspaceTitle">
+
+
+
+
+
+
+
+
+      <header class="workspace-header">
+
+
+
+
+
+
+
+
+        <div class="workspace-title">
+
+
+
+
+
+
+
+
+          <div class="workspace-source-row"><span class="workspace-label">C++17 · Auto Judge</span><a id="workspaceSourceLink" class="workspace-source-link" target="_blank" rel="noopener">Đề gốc ↗</a></div>
+
+
+
+
+
+
+
+
+          <h2 id="workspaceTitle">Đang tải bài…</h2>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="workspace-header-actions">
+
+
+
+
+
+
+
+
+          <span id="judgeStatus" class="judge-status">Chưa chạy</span>
+
+
+
+
+
+
+
+
+          <button id="closeExercise" type="button" class="icon-button" aria-label="Đóng bài">✕</button>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+      </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="exercise-workspace">
+
+
+
+
+
+
+
+
+        <section class="problem-pane" aria-label="Đề bài">
+
+
+
+
+
+
+
+
+          <div class="problem-block">
+
+
+
+
+
+
+
+
+            <h3>Đề bài</h3>
+
+
+
+
+
+
+
+
+            <p id="problemStatement"></p>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="io-grid">
+
+
+
+
+
+
+
+
+            <div class="problem-block compact-block">
+
+
+
+
+
+
+
+
+              <h3>Input</h3>
+
+
+
+
+
+
+
+
+              <p id="problemInput"></p>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="problem-block compact-block">
+
+
+
+
+
+
+
+
+              <h3>Output</h3>
+
+
+
+
+
+
+
+
+              <p id="problemOutput"></p>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="samples-heading">
+
+
+
+
+
+
+
+
+            <h3>Test mẫu</h3>
+
+
+
+
+
+
+
+
+            <span id="hiddenTestCount"></span>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+          <div id="sampleTests" class="sample-tests"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="hint-area">
+
+
+
+
+
+
+
+
+            <button id="showHint" type="button" class="button button-secondary">Xem gợi ý</button>
+
+
+
+
+
+
+
+
+            <p id="hintText" hidden></p>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="code-pane" aria-label="Trình soạn thảo">
+
+
+
+
+
+
+
+
+          <div class="editor-toolbar">
+
+
+
+
+
+
+
+
+            <div class="editor-language">
+
+
+
+
+
+
+
+
+              <span class="language-dot" aria-hidden="true"></span>
+
+
+
+
+
+
+
+
+              <strong>main.cpp</strong>
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="editor-toolbar-actions">
+
+              <button id="formatCode" type="button" class="editor-tool" title="Căn lề code (Shift + Alt + F)">Căn lề</button>
+
+              <span class="keyboard-hint">Ctrl + Enter: chạy · Ctrl + Shift + Enter: nộp</span>
+
+            </div>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="editor-frame">
+            <pre id="lineNumbers" class="line-numbers" aria-hidden="true">1</pre>
+            <textarea id="codeEditor" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Code C++"></textarea>
+          </div>
+          <div class="editor-statusbar" aria-live="polite">
+            <span id="cursorPosition">Ln 1, Col 1</span>
+            <span>Spaces: 4</span>
+            <span>UTF-8</span>
+            <span>C++17</span>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="judge-actions">
+
+
+
+
+
+
+
+
+            <button id="runTests" type="button" class="button button-secondary">Chạy test</button>
+
+
+
+
+
+
+
+
+            <button id="submitCode" type="button" class="button button-primary">Nộp bài</button>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div id="judgeResults" class="judge-results" aria-live="polite"></div>
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/app.js"></script>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

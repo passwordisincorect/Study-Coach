@@ -1,0 +1,189 @@
+{
+  "id": 197,
+  "title": "Thêm n số 0 bên trái chuỗi s",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/197",
+  "statement": "Bài 197: Thêm n số 0 bên trái chuỗi s. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <sstream>\n\n#include <algorithm>\n\n#include <cctype>\n\nusing namespace std;\n\nbool letter(char c){return ('a'<=c&&c<='z')||('A'<=c&&c<='Z');}\n\nbool digit(char c){return '0'<=c&&c<='9';}\n\nint main(){\nstring s;getline(cin,s);int n;cin>>n;\n\nif((int)s.size()<n){int count=n-(int)s.size();\n\nif(!s.empty()&&(s[0]=='-'||s[0]=='+'))s=s[0]+string(count,'0')+s.substr(1);\n\nelse s=string(count,'0')+s;}\n\ncout<<s<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "1\n1\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\n2\n",
+      "output": "01\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\n6\n",
+      "output": "000001\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123\n3\n",
+      "output": "123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123\n4\n",
+      "output": "0123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123\n8\n",
+      "output": "00000123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123\n1\n",
+      "output": "123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-9\n2\n",
+      "output": "-9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-9\n3\n",
+      "output": "-09\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-9\n7\n",
+      "output": "-000009\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-9\n1\n",
+      "output": "-9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "+9\n2\n",
+      "output": "+9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "+9\n3\n",
+      "output": "+09\n",
+      "origin": "generated"
+    },
+    {
+      "input": "+9\n7\n",
+      "output": "+000009\n",
+      "origin": "generated"
+    },
+    {
+      "input": "+9\n1\n",
+      "output": "+9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc\n3\n",
+      "output": "abc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc\n4\n",
+      "output": "0abc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc\n8\n",
+      "output": "00000abc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc\n1\n",
+      "output": "abc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "00010\n5\n",
+      "output": "00010\n",
+      "origin": "generated"
+    },
+    {
+      "input": "00010\n6\n",
+      "output": "000010\n",
+      "origin": "generated"
+    },
+    {
+      "input": "00010\n10\n",
+      "output": "0000000010\n",
+      "origin": "generated"
+    },
+    {
+      "input": "00010\n1\n",
+      "output": "00010\n",
+      "origin": "generated"
+    },
+    {
+      "input": "000\n3\n",
+      "output": "000\n",
+      "origin": "generated"
+    },
+    {
+      "input": "000\n4\n",
+      "output": "0000\n",
+      "origin": "generated"
+    },
+    {
+      "input": "000\n8\n",
+      "output": "00000000\n",
+      "origin": "generated"
+    },
+    {
+      "input": "000\n1\n",
+      "output": "000\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc123\n6\n",
+      "output": "abc123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc123\n7\n",
+      "output": "0abc123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc123\n11\n",
+      "output": "00000abc123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc123\n1\n",
+      "output": "abc123\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99999999\n8\n",
+      "output": "99999999\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99999999\n9\n",
+      "output": "099999999\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99999999\n13\n",
+      "output": "0000099999999\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99999999\n1\n",
+      "output": "99999999\n",
+      "origin": "generated"
+    }
+  ]
+}

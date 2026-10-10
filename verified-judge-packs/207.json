@@ -1,0 +1,74 @@
+{
+  "id": 207,
+  "title": "Thêm ký tự x sao cho xâu s có độ dài là n, và s nằm ở bên phải",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/207",
+  "statement": "Bài 207: Thêm ký tự x sao cho xâu s có độ dài là n, và s nằm ở bên phải. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n#include <string>\nusing namespace std;\nint main(){string s,x;getline(cin,s);getline(cin,x);int n;cin>>n;\ncout<<string(n-(int)s.size(),x.at(0))<<s<<'\\n';}",
+  "tests": [
+    {
+      "input": "A\n*\n1\n",
+      "output": "A\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "A\n*\n2\n",
+      "output": "*A\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "A\n*\n4\n",
+      "output": "***A\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc\n@\n5\n",
+      "output": "@@abc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc\n@\n3\n",
+      "output": "abc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Vietnam\n$\n8\n",
+      "output": "$Vietnam\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Vietnam\n$\n11\n",
+      "output": "$$$$Vietnam\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tien Giang\n$\n15\n",
+      "output": "$$$$$Tien Giang\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tien Giang\n$\n13\n",
+      "output": "$$$Tien Giang\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Name\n#\n11\n",
+      "output": "#######Name\n",
+      "origin": "generated"
+    },
+    {
+      "input": "An\n=\n11\n",
+      "output": "=========An\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Code\n!\n6\n",
+      "output": "!!Code\n",
+      "origin": "generated"
+    }
+  ]
+}

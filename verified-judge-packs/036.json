@@ -1,0 +1,74 @@
+{
+  "id": 36,
+  "title": "Xếp loại học sinh",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/036",
+  "statement": "Bài 36: Xếp loại học sinh. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <iomanip>\n\nusing namespace std;\n\nint main(){double a,b;cin>>a>>b;double x=(a+2*b)/3;\n\ncout<<fixed<<setprecision(1)<<x<<'\\n';\n\nif(x>=8)cout<<\"Gioi\\n\";\n\nelse if(x>=6.5)cout<<\"Kha\\n\";\n\nelse if(x>=5)cout<<\"Trung binh\\n\";\n\nelse if(x>=3.5)cout<<\"Yeu\\n\";\n\nelse cout<<\"Kem\\n\";}",
+  "tests": [
+    {
+      "input": "0 0\n",
+      "output": "0.0\nKem\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "10 10\n",
+      "output": "10.0\nGioi\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "8 8\n",
+      "output": "8.0\nGioi\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6.5 6.5\n",
+      "output": "6.5\nKha\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5 5\n",
+      "output": "5.0\nTrung binh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3.5 3.5\n",
+      "output": "3.5\nYeu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 3\n",
+      "output": "3.0\nKem\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6 6\n",
+      "output": "6.0\nTrung binh\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9 6\n",
+      "output": "7.0\nKha\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 7\n",
+      "output": "8.0\nGioi\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 3\n",
+      "output": "2.7\nKem\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7 8\n",
+      "output": "7.7\nKha\n",
+      "origin": "generated"
+    }
+  ]
+}

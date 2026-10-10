@@ -1,0 +1,119 @@
+{
+  "id": 131,
+  "title": "Đếm số lượng số chia hết cho 5 trong mảng",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/131",
+  "statement": "Bài 131: Đếm số lượng số chia hết cho 5 trong mảng. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <vector>\n\n#include <sstream>\n\n#include <iomanip>\n\n#include <cmath>\n\nusing namespace std;\n\nbool isPrime(long long x){if(x<2)return false;for(long long d=2;d*d<=x;d++)if(x%d==0)return false;return true;}\n\nstring average(long long sum,long long count,int places){\n\n if(!count){return places?string(\"0.\")+string(places,'0'):\"0\";}\n\n long long scale=1;for(int j=0;j<places;j++)scale*=10;\n\n long long a=sum<0?-sum:sum;\n\n long long rounded=(2*a*scale+count)/(2*count);\n\n ostringstream out;if(sum<0&&rounded)out<<'-';\n\n out<<rounded/scale;\n\n if(places)out<<'.'<<setw(places)<<setfill('0')<<(rounded%scale);\n\n return out.str();\n\n}\n\nint main(){ios::sync_with_stdio(false);cin.tie(nullptr);\n\nint n;cin>>n;vector<long long>a(n);for(auto &v:a)cin>>v;\n\nint count=0;for(auto v:a)if(v%5==0)count++;cout<<count<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "1\n1\n",
+      "output": "0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\n0\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\n-1\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\n2\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\n9\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\n1\n2\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\n-1 1\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n2\n4\n6\n8\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n1 3 5 7\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n0\n0\n0\n0\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n2 3 5 7 11\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\n9\n0\n3\n8\n6\n7\n-2\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n-100000 100000 -100000 100000\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n10\n7\n10\n7\n10\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n-3 -5 -7 -11 0\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n3\n1\n3\n1\n3\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n99991 4 99991 2 4\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n2\n2\n2\n2\n2\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n100000 99999 -99999 0\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\n1\n4\n9\n15\n20\n25\n30\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n1 2 3 4 5 6 7 8 9 10\n",
+      "output": "2\n",
+      "origin": "generated"
+    }
+  ]
+}

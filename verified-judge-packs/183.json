@@ -1,0 +1,139 @@
+{
+  "id": 183,
+  "title": "Kiểm tra tất cả ký tự trong chuỗi có phải là ký hiệu",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/183",
+  "statement": "Bài 183: Kiểm tra tất cả ký tự trong chuỗi có phải là ký hiệu. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <sstream>\n\n#include <algorithm>\n\n#include <cctype>\n\nusing namespace std;\n\nbool letter(char c){return ('a'<=c&&c<='z')||('A'<=c&&c<='Z');}\n\nbool digit(char c){return '0'<=c&&c<='9';}\n\nint main(){\nstring s;getline(cin,s);bool ok=!s.empty();for(char c:s)if(letter(c)||digit(c))ok=false;cout<<(ok?\"YES\":\"NO\")<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "abc\n",
+      "output": "NO\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "ABC\n",
+      "output": "NO\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "AbC\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123a\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "!@#\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "B\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Z\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a A z Z\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Hello World!\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "hello world\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tran Phi An Binh\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Vinh Kim Tien Giang\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Python 123\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "One Two Three\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "  leading words\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "trailing words   \n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "  a  b  c  \n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "  spaced out  \n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "radar\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "A1B2\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "hello-hello\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "foo foo foo\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 20 30\n",
+      "output": "NO\n",
+      "origin": "generated"
+    }
+  ]
+}

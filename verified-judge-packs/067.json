@@ -1,0 +1,74 @@
+{
+  "id": 67,
+  "title": "Tính tổng những số tự nhiên chia hết cho 3 hoặc 5 từ 1 đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/067",
+  "statement": "Bài 67: Tính tổng những số tự nhiên chia hết cho 3 hoặc 5 từ 1 đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nlong long sum(long long n,long long d){long long k=n/d;return d*k*(k+1)/2;}\n\nint main(){long long n;cin>>n;cout<<sum(n,3)+sum(n,5)-sum(n,15)<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "input": "14\n",
+      "output": "45\n",
+      "origin": "generated"
+    },
+    {
+      "input": "15\n",
+      "output": "60\n",
+      "origin": "generated"
+    },
+    {
+      "input": "16\n",
+      "output": "60\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99\n",
+      "output": "2318\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "2418\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999\n",
+      "output": "233333166668\n",
+      "origin": "generated"
+    }
+  ]
+}

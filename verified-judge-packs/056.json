@@ -1,0 +1,64 @@
+{
+  "id": 56,
+  "title": "Kiểm tra ba số có là 3 cạnh của một tam giác và tính chu vi, diện tích",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/056",
+  "statement": "Bài 56: Kiểm tra ba số có là 3 cạnh của một tam giác và tính chu vi, diện tích. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <iomanip>\n\n#include <cmath>\n\nusing namespace std;\n\nint main(){long long a,b,c;cin>>a>>b>>c;\n\nif(a+b<=c||a+c<=b||b+c<=a){cout<<\"Day khong phai la 3 canh cua mot tam giac\\n\";return 0;}\n\ncout<<\"Day la 3 canh cua mot tam giac\\n\";\n\nlong double p=(a+b+c)/2.0L;\n\nlong double s=sqrtl(p*(p-a)*(p-b)*(p-c));\n\ncout<<(a+b+c)<<' '<<fixed<<setprecision(1)<<s<<'\\n';}",
+  "tests": [
+    {
+      "input": "6 8 10\n",
+      "output": "Day la 3 canh cua mot tam giac\n24 24.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "5 12 13\n",
+      "output": "Day la 3 canh cua mot tam giac\n30 30.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "5 5 5\n",
+      "output": "Day la 3 canh cua mot tam giac\n15 10.8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 3 4\n",
+      "output": "Day la 3 canh cua mot tam giac\n9 2.9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5 5 6\n",
+      "output": "Day la 3 canh cua mot tam giac\n16 12.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 1 2\n",
+      "output": "Day khong phai la 3 canh cua mot tam giac\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 1 1\n",
+      "output": "Day khong phai la 3 canh cua mot tam giac\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1 2 2\n",
+      "output": "Day khong phai la 3 canh cua mot tam giac\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 20 40\n",
+      "output": "Day khong phai la 3 canh cua mot tam giac\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7 7 7\n",
+      "output": "Day la 3 canh cua mot tam giac\n21 21.2\n",
+      "origin": "generated"
+    }
+  ]
+}

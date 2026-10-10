@@ -1,0 +1,74 @@
+{
+  "id": 268,
+  "title": "Viết hàm đổi giá trị 2 biến",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/268",
+  "statement": "Bài 268: Viết hàm đổi giá trị 2 biến. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <sstream>\n#include <map>\n#include <set>\n#include <numeric>\n#include <iomanip>\n#include <cmath>\n#include <tuple>\nusing namespace std;\nvoid row(const vector<long long>&a){for(size_t i=0;i<a.size();i++){if(i)cout<<' ';cout<<a[i];}cout<<'\\n';}\nvector<long long>ints(const string&s){vector<long long>a;istringstream in(s);long long x;while(in>>x)a.push_back(x);return a;}\nint tenth(const string&s){auto p=s.find('.');int base=stoi(s);if(p==string::npos)return base*10;int f=s[p+1]-'0';return base*10+(base<0?-f:f);}\nstring grade(int t){ostringstream o;if(t<0){o<<'-';t=-t;}o<<t/10<<'.'<<t%10;return o.str();}\npair<string,int> parseStudent(const string&s){auto p=s.find_last_of(' ');return {s.substr(0,p),tenth(s.substr(p+1))};}\nint main(){ios::sync_with_stdio(false);cin.tie(nullptr);long long a,b;cin>>a>>b;swap(a,b);cout<<a<<' '<<b<<'\\n';}\n",
+  "tests": [
+    {
+      "input": "0 0\n",
+      "output": "0 0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 0\n",
+      "output": "0 1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "0 1\n",
+      "output": "1 0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1 1\n",
+      "output": "1 -1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 -1\n",
+      "output": "-1 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 20\n",
+      "output": "20 10\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-100 100\n",
+      "output": "100 -100\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1000000000 -1000000000\n",
+      "output": "-1000000000 1000000000\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-4 -4\n",
+      "output": "-4 -4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9 9\n",
+      "output": "9 9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "15 -23\n",
+      "output": "-23 15\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123456 0\n",
+      "output": "0 123456\n",
+      "origin": "generated"
+    }
+  ]
+}

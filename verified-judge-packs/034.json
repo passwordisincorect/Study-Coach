@@ -1,0 +1,54 @@
+{
+  "id": 34,
+  "title": "Tìm số lớn nhất",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/034",
+  "statement": "Bài 34: Tìm số lớn nhất. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <algorithm>\n\n#include <iostream>\n\nusing namespace std;\n\nint main(){long long a,b,c;cin>>a>>b>>c;cout<<max(a,max(b,c))<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 2 3\n",
+      "output": "3\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3 1 2\n",
+      "output": "3\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 3 1\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-8 -2 -5\n",
+      "output": "-2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1000000000 -1 0\n",
+      "output": "1000000000\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1000000000 -999999999 -1\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0 -8 8\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "42 100 -100\n",
+      "output": "100\n",
+      "origin": "generated"
+    }
+  ]
+}

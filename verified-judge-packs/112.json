@@ -1,0 +1,74 @@
+{
+  "id": 112,
+  "title": "Kiểm tra một số nguyên có là số Smith",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/112",
+  "statement": "Bài 112: Kiểm tra một số nguyên có là số Smith. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint digitSum(long long n){int r=0;while(n){r+=n%10;n/=10;}return r;}\n\n\nint main(){long long n;cin>>n;long long x=n;int sum=0,count=0;\n\n\nfor(long long d=2;d*d<=x;d++){while(x%d==0){sum+=digitSum(d);x/=d;count++;}}\n\n\nif(x>1){sum+=digitSum(x);count++;}\n\n\ncout<<(count>=2&&sum==digitSum(n)?\"Yes\":\"No\")<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "No\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "No\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "27\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "94\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "121\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "666\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1086\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "202\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    }
+  ]
+}

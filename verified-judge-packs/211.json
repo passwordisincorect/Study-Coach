@@ -1,0 +1,94 @@
+{
+  "id": 211,
+  "title": "Tách họ và chữ lót trong họ và tên",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/211",
+  "statement": "Bài 211: Tách họ và chữ lót trong họ và tên. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <string>\n\n\n\n\n#include <vector>\n\n\n\n\n#include <algorithm>\n\n\n\n\n#include <sstream>\n\n\n\n\n#include <limits>\n\n\n\n\nusing namespace std;\n\n\n\n\nint main(){\nstring s;getline(cin,s);auto pos=s.find_last_of(' ');cout<<(pos==string::npos?\"\":s.substr(0,pos))<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "Vinh Kim\n",
+      "output": "Vinh\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "Hello World\n",
+      "output": "Hello\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "One Two Three\n",
+      "output": "One Two\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ABC DEF\n",
+      "output": "ABC\n",
+      "origin": "generated"
+    },
+    {
+      "input": "red blue green\n",
+      "output": "red blue\n",
+      "origin": "generated"
+    },
+    {
+      "input": "One Two\n",
+      "output": "One\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a bb ccc\n",
+      "output": "a bb\n",
+      "origin": "generated"
+    },
+    {
+      "input": "aaa bbb ccc\n",
+      "output": "aaa bbb\n",
+      "origin": "generated"
+    },
+    {
+      "input": "alpha beta gamma\n",
+      "output": "alpha beta\n",
+      "origin": "generated"
+    },
+    {
+      "input": "the quick brown fox\n",
+      "output": "the quick brown\n",
+      "origin": "generated"
+    },
+    {
+      "input": "one two three four\n",
+      "output": "one two three\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AB CD EF GH\n",
+      "output": "AB CD EF\n",
+      "origin": "generated"
+    },
+    {
+      "input": "longword a\n",
+      "output": "longword\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a longword\n",
+      "output": "a\n",
+      "origin": "generated"
+    },
+    {
+      "input": "XX XXX X\n",
+      "output": "XX XXX\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ha ha ha\n",
+      "output": "ha ha\n",
+      "origin": "generated"
+    }
+  ]
+}

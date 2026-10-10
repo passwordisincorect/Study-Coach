@@ -1,0 +1,54 @@
+{
+  "id": 75,
+  "title": "Đếm số lượng số nguyên chẵn từ m đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/075",
+  "statement": "Bài 75: Đếm số lượng số nguyên chẵn từ m đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){long long m,n;cin>>m>>n;cout<<n/2-(m-1)/2<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 1\n",
+      "output": "0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 2\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 2\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 3\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 4\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5 12\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100 105\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999990 999999\n",
+      "output": "5\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": 161,
+  "title": "In ký tự ở vị trí k trong chuỗi",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/161",
+  "statement": "Bài 161: In ký tự ở vị trí k trong chuỗi. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <vector>\n\n#include <algorithm>\n\n#include <cctype>\n\n#include <sstream>\n\nusing namespace std;\n\nvector<string> chars(const string&s){\n\n vector<string> out;for(size_t i=0;i<s.size();){unsigned char b=s[i];\n\n size_t len=b<128?1:b<224?2:b<240?3:4;\n\n out.push_back(s.substr(i,len));i+=len;}return out;\n\n}\n\nint main(){\nstring s;getline(cin,s);int k;cin>>k;auto cs=chars(s);cout<<cs.at(k)<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "a\n0\n",
+      "output": "a\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "b\n0\n",
+      "output": "b\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "A\n0\n",
+      "output": "A\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Z\n0\n",
+      "output": "Z\n",
+      "origin": "generated"
+    },
+    {
+      "input": "hello\n2\n",
+      "output": "l\n",
+      "origin": "generated"
+    },
+    {
+      "input": "world\n4\n",
+      "output": "d\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abcba\n0\n",
+      "output": "a\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AbcBA\n2\n",
+      "output": "c\n",
+      "origin": "generated"
+    },
+    {
+      "input": "hello world\n10\n",
+      "output": "d\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Python\n0\n",
+      "output": "P\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AaAa\n2\n",
+      "output": "A\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc def ghi\n10\n",
+      "output": "i\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AB CD\n0\n",
+      "output": "A\n",
+      "origin": "generated"
+    },
+    {
+      "input": "XYZ\n1\n",
+      "output": "Y\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0110\n3\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a a a\n0\n",
+      "output": "a\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Love Python\n5\n",
+      "output": "P\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tien Giang\n0\n",
+      "output": "T\n",
+      "origin": "generated"
+    },
+    {
+      "input": "hello123\n7\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "No spaces\n0\n",
+      "output": "N\n",
+      "origin": "generated"
+    },
+    {
+      "input": "111222\n3\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "racecar\n6\n",
+      "output": "r\n",
+      "origin": "generated"
+    }
+  ]
+}

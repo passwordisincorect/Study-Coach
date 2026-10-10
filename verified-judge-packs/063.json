@@ -1,0 +1,64 @@
+{
+  "id": 63,
+  "title": "In những số tự nhiên chia hết cho 3 từ 1 đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/063",
+  "statement": "Bài 63: In những số tự nhiên chia hết cho 3 từ 1 đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int n;cin>>n;bool first=true;for(int i=3;i<=n;i+=3){if(!first)cout<<' ';cout<<i;first=false;}cout<<'\\n';}",
+  "tests": [
+    {
+      "input": "4\n",
+      "output": "3\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "5\n",
+      "output": "3\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "6\n",
+      "output": "3 6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\n",
+      "output": "3 6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9\n",
+      "output": "3 6 9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "3 6 9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "20\n",
+      "output": "3 6 9 12 15 18\n",
+      "origin": "generated"
+    },
+    {
+      "input": "30\n",
+      "output": "3 6 9 12 15 18 21 24 27 30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99\n",
+      "output": "3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 66 69 72 75 78 81 84 87 90 93 96 99\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 66 69 72 75 78 81 84 87 90 93 96 99\n",
+      "origin": "generated"
+    }
+  ]
+}

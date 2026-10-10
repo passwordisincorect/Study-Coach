@@ -1,0 +1,79 @@
+{
+  "id": 291,
+  "title": "In từng ký tự và số lần xuất hiện trong chuỗi",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/291",
+  "statement": "Bài 291: In từng ký tự và số lần xuất hiện trong chuỗi. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n#include <string>\n\n\n\n#include <vector>\n\n\n\n#include <algorithm>\n\n\n\n#include <sstream>\n\n\n\n#include <map>\n\n\n\n#include <set>\n\n\n\n#include <numeric>\n\n\n\n#include <iomanip>\n\n\n\n#include <cmath>\n\n\n\n#include <tuple>\n\n\n\nusing namespace std;\n\n\n\nvoid row(const vector<long long>&a){for(size_t i=0;i<a.size();i++){if(i)cout<<' ';cout<<a[i];}cout<<'\\n';}\n\n\n\nvector<long long>ints(const string&s){vector<long long>a;istringstream in(s);long long x;while(in>>x)a.push_back(x);return a;}\n\n\n\nint tenth(const string&s){auto p=s.find('.');int base=stoi(s);if(p==string::npos)return base*10;int f=s[p+1]-'0';return base*10+(base<0?-f:f);}\n\n\n\nstring grade(int t){ostringstream o;if(t<0){o<<'-';t=-t;}o<<t/10<<'.'<<t%10;return o.str();}\n\n\n\npair<string,int> parseStudent(const string&s){auto p=s.find_last_of(' ');return {s.substr(0,p),tenth(s.substr(p+1))};}\n\n\n\nint main(){ios::sync_with_stdio(false);cin.tie(nullptr);string s;getline(cin,s);map<char,int>cnt;for(char c:s)cnt[c]++;for(auto p:cnt)cout<<p.first<<' '<<p.second<<'\\n';}\n",
+  "tests": [
+    {
+      "input": "abc124abad421cd23\n",
+      "output": "1 2\n2 3\n3 1\n4 2\na 3\nb 2\nc 2\nd 2\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "ab\n",
+      "output": "a 1\nb 1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "aaaa\n",
+      "output": "a 4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "aabbbb\n",
+      "output": "a 2\nb 4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "aabbcc\n",
+      "output": "a 2\nb 2\nc 2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abcABC\n",
+      "output": "A 1\nB 1\nC 1\na 1\nb 1\nc 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123321\n",
+      "output": "1 2\n2 2\n3 2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "010101\n",
+      "output": "0 3\n1 3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ABab\n",
+      "output": "A 1\nB 1\na 1\nb 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "zzzyyyxxx\n",
+      "output": "x 3\ny 3\nz 3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AAABBC\n",
+      "output": "A 3\nB 2\nC 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "!@##!\n",
+      "output": "! 2\n# 2\n@ 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "helloworld\n",
+      "output": "d 1\ne 1\nh 1\nl 3\no 2\nr 1\nw 1\n",
+      "origin": "generated"
+    }
+  ]
+}

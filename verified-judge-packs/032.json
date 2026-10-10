@@ -1,0 +1,54 @@
+{
+  "id": 32,
+  "title": "So sánh thời gian chạy",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/032",
+  "statement": "Bài 32: So sánh thời gian chạy. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){ long long a,b;cin>>a>>b;\n\nif(a<b)cout<<\"An nhanh hon\\n\";\n\nelse if(b<a)cout<<\"Binh nhanh hon\\n\";\n\nelse cout<<\"Bang nhau\\n\"; }",
+  "tests": [
+    {
+      "input": "1 10000\n",
+      "output": "An nhanh hon\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "10000 1\n",
+      "output": "Binh nhanh hon\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 1\n",
+      "output": "Bang nhau\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10000 10000\n",
+      "output": "Bang nhau\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9999 10000\n",
+      "output": "An nhanh hon\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10000 9999\n",
+      "output": "Binh nhanh hon\n",
+      "origin": "generated"
+    },
+    {
+      "input": "509 509\n",
+      "output": "Bang nhau\n",
+      "origin": "generated"
+    },
+    {
+      "input": "221 220\n",
+      "output": "Binh nhanh hon\n",
+      "origin": "generated"
+    }
+  ]
+}

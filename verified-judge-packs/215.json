@@ -1,0 +1,74 @@
+{
+  "id": 215,
+  "title": "In bảng điểm",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/215",
+  "statement": "Bài 215: In bảng điểm. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <sstream>\n#include <map>\n#include <set>\n#include <numeric>\n#include <iomanip>\n#include <cmath>\n#include <tuple>\nusing namespace std;\nvoid row(const vector<long long>&a){for(size_t i=0;i<a.size();i++){if(i)cout<<' ';cout<<a[i];}cout<<'\\n';}\nvector<long long>ints(const string&s){vector<long long>a;istringstream in(s);long long x;while(in>>x)a.push_back(x);return a;}\nint tenth(const string&s){auto p=s.find('.');int base=stoi(s);if(p==string::npos)return base*10;int f=s[p+1]-'0';return base*10+(base<0?-f:f);}\nstring grade(int t){ostringstream o;if(t<0){o<<'-';t=-t;}o<<t/10<<'.'<<t%10;return o.str();}\npair<string,int> parseStudent(const string&s){auto p=s.find_last_of(' ');return {s.substr(0,p),tenth(s.substr(p+1))};}\nint main(){ios::sync_with_stdio(false);cin.tie(nullptr);int n;cin>>n;cin.ignore();vector<string>names(n);for(auto&s:names)getline(cin,s);vector<long double>grades(n);for(auto&x:grades)cin>>x;\nfor(int j=0;j<n;j++)cout<<names[j]<<\": \"<<fixed<<setprecision(1)<<grades[j]<<'\\n';}\n",
+  "tests": [
+    {
+      "input": "1\nTran An\n0.0\n",
+      "output": "Tran An: 0.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\nNguyen Binh\nLe Teo\n1.1\n2.4\n",
+      "output": "Nguyen Binh: 1.1\nLe Teo: 2.4\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\nLe Teo\nLe Thanh An\nHoang Nam\n2.2\n3.5\n4.8\n",
+      "output": "Le Teo: 2.2\nLe Thanh An: 3.5\nHoang Nam: 4.8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nLe Thanh An\nHoang Nam\nBui An\nAn\n3.3\n4.6\n5.9\n6.2\n",
+      "output": "Le Thanh An: 3.3\nHoang Nam: 4.6\nBui An: 5.9\nAn: 6.2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nTran An\nNguyen Binh\nLe Teo\nLe Thanh An\nHoang Nam\n4.4\n5.7\n6.0\n7.3\n8.6\n",
+      "output": "Tran An: 4.4\nNguyen Binh: 5.7\nLe Teo: 6.0\nLe Thanh An: 7.3\nHoang Nam: 8.6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\nBui An\n5.5\n",
+      "output": "Bui An: 5.5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nTran An\nNguyen Binh\n6.6\n7.9\n",
+      "output": "Tran An: 6.6\nNguyen Binh: 7.9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nTran An\nNguyen Binh\nLe Teo\n7.7\n8.0\n9.3\n",
+      "output": "Tran An: 7.7\nNguyen Binh: 8.0\nLe Teo: 9.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nTran An\nNguyen Binh\nLe Teo\nLe Thanh An\n8.8\n9.1\n10.4\n0.7\n",
+      "output": "Tran An: 8.8\nNguyen Binh: 9.1\nLe Teo: 10.4\nLe Thanh An: 0.7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nTran An\nNguyen Binh\nLe Teo\nLe Thanh An\nHoang Nam\n9.9\n10.2\n0.5\n1.8\n2.1\n",
+      "output": "Tran An: 9.9\nNguyen Binh: 10.2\nLe Teo: 0.5\nLe Thanh An: 1.8\nHoang Nam: 2.1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\nTran An\n10.0\n",
+      "output": "Tran An: 10.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nTran An\nNguyen Binh\n0.1\n1.4\n",
+      "output": "Tran An: 0.1\nNguyen Binh: 1.4\n",
+      "origin": "generated"
+    }
+  ]
+}

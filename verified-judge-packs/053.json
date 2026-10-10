@@ -1,0 +1,84 @@
+{
+  "id": 53,
+  "title": "Kiểm tra tuổi của một người đang ở giai đoạn nào?",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/053",
+  "statement": "Bài 53: Kiểm tra tuổi của một người đang ở giai đoạn nào?. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int t;cin>>t;\n\nif(t<18)cout<<\"Tre em\\n\"<<(t<=6?\"Tre mam non\":t<=11?\"Tre tieu hoc\":\"Tre trung hoc\")<<'\\n';\n\nelse if(t<60)cout<<\"Nguoi truong thanh\\n\"<<(t<=23?\"Sinh vien\":\"Nguoi di lam\")<<'\\n';\n\nelse cout<<\"Nguoi cao tuoi\\n\"<<(t<=62?\"Sap nghi huu\":\"Da nghi huu\")<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "Tre em\nTre mam non\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "6\n",
+      "output": "Tre em\nTre mam non\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "7\n",
+      "output": "Tre em\nTre tieu hoc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11\n",
+      "output": "Tre em\nTre tieu hoc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12\n",
+      "output": "Tre em\nTre trung hoc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "17\n",
+      "output": "Tre em\nTre trung hoc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "18\n",
+      "output": "Nguoi truong thanh\nSinh vien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "23\n",
+      "output": "Nguoi truong thanh\nSinh vien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "24\n",
+      "output": "Nguoi truong thanh\nNguoi di lam\n",
+      "origin": "generated"
+    },
+    {
+      "input": "59\n",
+      "output": "Nguoi truong thanh\nNguoi di lam\n",
+      "origin": "generated"
+    },
+    {
+      "input": "60\n",
+      "output": "Nguoi cao tuoi\nSap nghi huu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "62\n",
+      "output": "Nguoi cao tuoi\nSap nghi huu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "63\n",
+      "output": "Nguoi cao tuoi\nDa nghi huu\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "Nguoi cao tuoi\nDa nghi huu\n",
+      "origin": "generated"
+    }
+  ]
+}

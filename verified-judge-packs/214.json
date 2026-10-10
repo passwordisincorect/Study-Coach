@@ -1,0 +1,54 @@
+{
+  "id": 214,
+  "title": "Mã hóa xâu đơn giản",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/214",
+  "statement": "Bài 214: Mã hóa xâu đơn giản. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <string>\n\n\n\n\n#include <vector>\n\n\n\n\n#include <algorithm>\n\n\n\n\n#include <sstream>\n\n\n\n\n#include <limits>\n\n\n\n\nusing namespace std;\n\n\n\n\nint main(){\nstring s;getline(cin,s);int k;cin>>k;for(unsigned char c:s)cout<<(char)(c+k);cout<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "ABC\n2\n",
+      "output": "CDE\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "abcd\n2\n",
+      "output": "cdef\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "Hello\n1\n",
+      "output": "Ifmmp\n",
+      "origin": "generated"
+    },
+    {
+      "input": "A\n1\n",
+      "output": "B\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a\n1\n",
+      "output": "b\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Lmn\n3\n",
+      "output": "Opq\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Bcf\n1\n",
+      "output": "Cdg\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abcd\n5\n",
+      "output": "fghi\n",
+      "origin": "generated"
+    }
+  ]
+}

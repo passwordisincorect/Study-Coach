@@ -1,0 +1,79 @@
+{
+  "id": 269,
+  "title": "Viết hàm in hình chữ nhật rỗng",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/269",
+  "statement": "Bài 269: Viết hàm in hình chữ nhật rỗng. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int d,r;char c;cin>>d>>r>>c;for(int row=0;row<r;row++){for(int col=0;col<d;col++)cout<<((row==0||row==r-1||col==0||col==d-1)?c:' ');cout<<'\\n';}}",
+  "tests": [
+    {
+      "input": "1 1\n#\n",
+      "output": "#\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 4\n#\n",
+      "output": "#\n#\n#\n#\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4 1\n#\n",
+      "output": "####\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 2\n@\n",
+      "output": "@@\n@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 2\n*\n",
+      "output": "***\n***\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 3\n@\n",
+      "output": "@@\n@@\n@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 3\n*\n",
+      "output": "***\n* *\n***\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5 4\n@\n",
+      "output": "@@@@@\n@   @\n@   @\n@@@@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6 3\n*\n",
+      "output": "******\n*    *\n******\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7 7\n#\n",
+      "output": "#######\n#     #\n#     #\n#     #\n#     #\n#     #\n#######\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 2\n#\n",
+      "output": "##########\n##########\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 10\n@\n",
+      "output": "@@\n@@\n@@\n@@\n@@\n@@\n@@\n@@\n@@\n@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "8 5\n@\n",
+      "output": "@@@@@@@@\n@      @\n@      @\n@      @\n@@@@@@@@\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": 42,
+  "title": "Kiểm tra số nguyên có lớn hơn 100?",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/042",
+  "statement": "Bài 42: Kiểm tra số nguyên có lớn hơn 100?. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){long long n;cin>>n;cout<<(n>100?\"Yes\":\"No\")<<'\\n';}",
+  "tests": [
+    {
+      "input": "-1000000000\n",
+      "output": "No\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "-1\n",
+      "output": "No\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "0\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "102\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1000000000\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "101\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-101\n",
+      "output": "No\n",
+      "origin": "generated"
+    }
+  ]
+}

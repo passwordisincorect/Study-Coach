@@ -1,0 +1,74 @@
+{
+  "id": 289,
+  "title": "Xoá số có giá trị x ra khỏi s",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/289",
+  "statement": "Bài 289: Xoá số có giá trị x ra khỏi s. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <unordered_set>\n\n\n\n\n#include <vector>\n\n\n\n\nusing namespace std;\n\n\n\n\nint main(){int n;cin>>n;vector<long long>a;unordered_set<long long>seen;\n\n\n\n\nwhile(n--){long long v;cin>>v;if(seen.insert(v).second)a.push_back(v);}long long x;cin>>x;\n\n\n\n\nif(!seen.count(x)){cout<<\"NO CHANGE\\n\";return 0;}\n\n\n\n\nseen.erase(x);bool first=true;for(auto v:a)if(seen.count(v)){if(!first)cout<<' ';cout<<v;first=false;}\n\n\n\n\nif(first)cout<<\"EMPTY\";cout<<'\\n';}",
+  "tests": [
+    {
+      "input": "5\n1 2 3 4 5\n3\n",
+      "output": "1 2 4 5\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4\n1 5 3 4\n6\n",
+      "output": "NO CHANGE\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\n1\n1\n",
+      "output": "EMPTY\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\n1\n2\n",
+      "output": "NO CHANGE\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\n-1 0 1\n0\n",
+      "output": "-1 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\n-1 0 1\n-1\n",
+      "output": "0 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\n9 8 7\n9\n",
+      "output": "8 7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\n9 8 7\n7\n",
+      "output": "9 8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\n-1000000 1000000\n2\n",
+      "output": "NO CHANGE\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\n0\n0\n",
+      "output": "EMPTY\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\n3 4\n4\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\n11 12 13\n17\n",
+      "output": "NO CHANGE\n",
+      "origin": "generated"
+    }
+  ]
+}

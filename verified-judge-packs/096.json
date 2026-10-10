@@ -1,0 +1,59 @@
+{
+  "id": 96,
+  "title": "In ra các số nguyên dương chẵn cho đến khi tổng của chúng ≥ k",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/096",
+  "statement": "Bài 96: In ra các số nguyên dương chẵn cho đến khi tổng của chúng ≥ k. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){long long k;cin>>k;long long total=0;bool first=true;\n\n\nfor(long long x=2;total<k;x+=2){total+=x;if(!first)cout<<' ';cout<<x;first=false;}cout<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "2\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "2\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\n",
+      "output": "2 4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n",
+      "output": "2 4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\n",
+      "output": "2 4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "2 4 6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "20\n",
+      "output": "2 4 6 8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "2 4 6 8 10 12 14 16 18 20\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999\n",
+      "output": "2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64\n",
+      "origin": "generated"
+    }
+  ]
+}

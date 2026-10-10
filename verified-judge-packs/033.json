@@ -1,0 +1,54 @@
+{
+  "id": 33,
+  "title": "Chuyển số sang chữ",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/033",
+  "statement": "Bài 33: Chuyển số sang chữ. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\nusing namespace std;\n\nint main(){int n;cin>>n;string names[]={\"\",\"One\",\"Two\",\"Three\",\"Four\",\"Five\",\"Six\",\"Seven\",\"Eight\",\"Nine\",\"Ten\"};if(n>=1&&n<=10)cout<<names[n]<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "One\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "Two\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4\n",
+      "output": "Four\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n",
+      "output": "Five\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\n",
+      "output": "Six\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\n",
+      "output": "Seven\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9\n",
+      "output": "Nine\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "Ten\n",
+      "origin": "generated"
+    }
+  ]
+}

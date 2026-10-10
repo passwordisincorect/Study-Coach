@@ -1,0 +1,74 @@
+{
+  "id": 285,
+  "title": "Sắp xếp danh sách theo thứ tự tăng dần của điểm",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/285",
+  "statement": "Bài 285: Sắp xếp danh sách theo thứ tự tăng dần của điểm. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\nusing namespace std;\nint tenths(const string&s){\n int p=0,whole=0,f=0,sign=1;\n if(s.size()&&(s[0]=='-'||s[0]=='+')){if(s[0]=='-')sign=-1;p++;}\n while(p<(int)s.size()&&s[p]>='0'&&s[p]<='9'){whole=whole*10+s[p]-'0';p++;}\n if(p<(int)s.size()&&s[p]=='.'&&p+1<(int)s.size())f=s[p+1]-'0';\n return sign*(whole*10+f);\n}\nstring score(int n){if(n<0)return \"-\"+score(-n);return to_string(n/10)+\".\"+to_string(n%10);}\npair<string,int> parse(const string&s){size_t e=s.find_last_not_of(' ');string t=s.substr(0,e+1);size_t p=t.find_last_of(' ');return {t.substr(0,p),tenths(t.substr(p+1))};}\nint main(){int n;cin>>n;string discard;getline(cin,discard);vector<pair<string,int>>a;while(n--){string s;getline(cin,s);a.push_back(parse(s));}\nstable_sort(a.begin(),a.end(),[](auto&x,auto&y){return x.second<y.second;});\nfor(auto&x:a)cout<<x.first<<' '<<score(x.second)<<'\\n';}\n",
+  "tests": [
+    {
+      "input": "1\nTran An 0.0\n",
+      "output": "Tran An 0.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\nTran An 2.3\nNguyen Binh 5.4\n",
+      "output": "Tran An 2.3\nNguyen Binh 5.4\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\nTran An 4.6\nNguyen Binh 7.7\nLe Teo 10.8\n",
+      "output": "Tran An 4.6\nNguyen Binh 7.7\nLe Teo 10.8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nTran An 6.9\nNguyen Binh 9.0\nLe Teo 1.1\nLe Thanh An 4.2\n",
+      "output": "Le Teo 1.1\nLe Thanh An 4.2\nTran An 6.9\nNguyen Binh 9.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nTran An 8.2\nNguyen Binh 0.3\nLe Teo 3.4\nLe Thanh An 6.5\nHoang Nam 9.6\n",
+      "output": "Nguyen Binh 0.3\nLe Teo 3.4\nLe Thanh An 6.5\nTran An 8.2\nHoang Nam 9.6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\nTran An 10.5\n",
+      "output": "Tran An 10.5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nTran An 1.8\nNguyen Binh 4.9\n",
+      "output": "Tran An 1.8\nNguyen Binh 4.9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nTran An 3.1\nNguyen Binh 6.2\nLe Teo 9.3\n",
+      "output": "Tran An 3.1\nNguyen Binh 6.2\nLe Teo 9.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\nTran An 5.4\nNguyen Binh 8.5\nLe Teo 0.6\nLe Thanh An 3.7\n",
+      "output": "Le Teo 0.6\nLe Thanh An 3.7\nTran An 5.4\nNguyen Binh 8.5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nTran An 7.7\nNguyen Binh 10.8\nLe Teo 2.9\nLe Thanh An 5.0\nHoang Nam 8.1\n",
+      "output": "Le Teo 2.9\nLe Thanh An 5.0\nTran An 7.7\nHoang Nam 8.1\nNguyen Binh 10.8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\nTran An 9.0\n",
+      "output": "Tran An 9.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nTran An 0.3\nNguyen Binh 3.4\n",
+      "output": "Tran An 0.3\nNguyen Binh 3.4\n",
+      "origin": "generated"
+    }
+  ]
+}

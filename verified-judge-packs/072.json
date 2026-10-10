@@ -1,0 +1,54 @@
+{
+  "id": 72,
+  "title": "Tính tổng những số nguyên từ m đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/072",
+  "statement": "Bài 72: Tính tổng những số nguyên từ m đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){long long m,n;cin>>m>>n;cout<<(n-m+1)*(m+n)/2<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 1\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 2\n",
+      "output": "3\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 2\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5 8\n",
+      "output": "26\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 30\n",
+      "output": "420\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999990 999999\n",
+      "output": "9999945\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 5\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6 10\n",
+      "output": "40\n",
+      "origin": "generated"
+    }
+  ]
+}

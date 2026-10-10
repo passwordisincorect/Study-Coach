@@ -1,0 +1,74 @@
+{
+  "id": 35,
+  "title": "Tính niên",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/035",
+  "statement": "Bài 35: Tính niên. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int t;cin>>t;\n\nif(t<=11)cout<<\"Thieu nhi\\n\";\n\nelse if(t<=25)cout<<\"Thieu nien\\n\";\n\nelse if(t<=50)cout<<\"Trung nien\\n\";\n\nelse cout<<\"Lao nien\\n\";}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "Thieu nhi\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "11\n",
+      "output": "Thieu nhi\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "12\n",
+      "output": "Thieu nien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "25\n",
+      "output": "Thieu nien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "26\n",
+      "output": "Trung nien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "50\n",
+      "output": "Trung nien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "51\n",
+      "output": "Lao nien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "150\n",
+      "output": "Lao nien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "Thieu nhi\n",
+      "origin": "generated"
+    },
+    {
+      "input": "24\n",
+      "output": "Thieu nien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "49\n",
+      "output": "Trung nien\n",
+      "origin": "generated"
+    },
+    {
+      "input": "149\n",
+      "output": "Lao nien\n",
+      "origin": "generated"
+    }
+  ]
+}

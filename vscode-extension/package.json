@@ -1,0 +1,38 @@
+{
+  "name": "study-coach",
+  "displayName": "C++ Study Coach",
+  "description": "Local progress logger for the 300 C++ exercises.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": ["Education"],
+  "activationEvents": [
+    "onCommand:studyCoach.startExercise",
+    "onCommand:studyCoach.markIndependent",
+    "onCommand:studyCoach.markHint",
+    "onCommand:studyCoach.markSolution",
+    "onCommand:studyCoach.markFailed"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {"command": "studyCoach.startExercise", "title": "Study Coach: Start Exercise"},
+      {"command": "studyCoach.markIndependent", "title": "Study Coach: Mark Independent"},
+      {"command": "studyCoach.markHint", "title": "Study Coach: Mark Need Hint"},
+      {"command": "studyCoach.markSolution", "title": "Study Coach: Mark Viewed Solution"},
+      {"command": "studyCoach.markFailed", "title": "Study Coach: Mark Failed"}
+    ],
+    "configuration": {
+      "title": "Study Coach",
+      "properties": {
+        "studyCoach.serverUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:8780",
+          "description": "Local Study Coach server URL."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": 201,
+  "title": "Chuyển mảng thành chuỗi",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/201",
+  "statement": "Bài 201: Chuyển mảng thành chuỗi. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <vector>\n\n#include <algorithm>\n\n#include <sstream>\n\n#include <limits>\n\nusing namespace std;\n\nint main(){\nint n;cin>>n;cin.ignore(numeric_limits<streamsize>::max(),'\\n');\n\nstring result;for(int i=0;i<n;i++){string line;getline(cin,line);result+=line.empty()?\" \":line.substr(0,1);}cout<<result<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "3\na\nb\nc\n",
+      "output": "abc\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "5\nH\ne\nl\nl\no\n",
+      "output": "Hello\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\nA\n",
+      "output": "A\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\na\n\nb\n",
+      "output": "a b\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\na\nb\nc\n\nx\ny\nz\n",
+      "output": "abc xyz\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\nx\n\ny\n\nz\n",
+      "output": "x y z\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\n0\n0\n0\n1\n1\n1\n",
+      "output": "000111\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\nZ\n",
+      "output": "Z\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11\nH\ne\nl\nl\no\n\nW\no\nr\nl\nd\n",
+      "output": "Hello World\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\nN\nh\na\n\nt\no\ni\n",
+      "output": "Nha toi\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\na\n\n\nb\n",
+      "output": "a  b\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\nA\nB\nC\nx\ny\nz\n",
+      "output": "ABCxyz\n",
+      "origin": "generated"
+    }
+  ]
+}

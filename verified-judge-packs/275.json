@@ -1,0 +1,54 @@
+{
+  "id": 275,
+  "title": "Tính toán thời gian còn lại đến một mốc thời gian",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/275",
+  "statement": "Bài 275: Tính toán thời gian còn lại đến một mốc thời gian. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <string>\n\n\n\n\n#include <cstdio>\n\n\n\n\nusing namespace std;\n\n\n\n\nlong long days(int y,int m,int d){y-=m<=2;long long era=(y>=0?y:y-399)/400;unsigned yoe=y-era*400;unsigned doy=(153*(m+(m>2?-3:9))+2)/5+d-1;unsigned doe=yoe*365+yoe/4-yoe/100+doy;return era*146097+(long long)doe-719468;}\n\n\n\n\nlong long readtime(){string s;getline(cin,s);int d,m,y,h,min,sec;sscanf(s.c_str(),\"%d/%d/%d %d:%d:%d\",&d,&m,&y,&h,&min,&sec);return days(y,m,d)*86400LL+h*3600+min*60+sec;}\n\n\n\n\nint main(){long long a=readtime(),b=readtime();long long dt=b-a;long long d=dt/86400;dt%=86400;\n\n\n\n\ncout<<d<<\" ngay \"<<dt/3600<<\" gio \"<<dt%3600/60<<\" phut \"<<dt%60<<\" giay\\n\";}",
+  "tests": [
+    {
+      "input": "31/12/2024 20:00:00\n10/02/2025 00:00:00\n",
+      "output": "40 ngay 4 gio 0 phut 0 giay\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "31/12/2023 20:00:00\n01/01/2024 00:00:00\n",
+      "output": "0 ngay 4 gio 0 phut 0 giay\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "01/01/2025 00:00:00\n01/01/2025 00:00:00\n",
+      "output": "0 ngay 0 gio 0 phut 0 giay\n",
+      "origin": "generated"
+    },
+    {
+      "input": "28/02/2024 23:59:59\n29/02/2024 00:00:00\n",
+      "output": "0 ngay 0 gio 0 phut 1 giay\n",
+      "origin": "generated"
+    },
+    {
+      "input": "28/02/2025 23:59:59\n01/03/2025 00:00:00\n",
+      "output": "0 ngay 0 gio 0 phut 1 giay\n",
+      "origin": "generated"
+    },
+    {
+      "input": "31/12/2024 23:59:00\n01/01/2025 00:01:01\n",
+      "output": "0 ngay 0 gio 2 phut 1 giay\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01/01/2000 00:00:00\n01/01/2001 00:00:00\n",
+      "output": "366 ngay 0 gio 0 phut 0 giay\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01/01/2024 01:02:03\n02/01/2024 04:05:06\n",
+      "output": "1 ngay 3 gio 3 phut 3 giay\n",
+      "origin": "generated"
+    }
+  ]
+}

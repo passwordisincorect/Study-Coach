@@ -1,0 +1,59 @@
+{
+  "id": 120,
+  "title": "Tính trung bình cộng các số nguyên tố từ m đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/120",
+  "statement": "Bài 120: Tính trung bình cộng các số nguyên tố từ m đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n#include <iomanip>\n\n\nusing namespace std;\n\n\nbool prime(int n){if(n<2)return false;for(int i=2;i*i<=n;i++)if(n%i==0)return false;return true;}\n\n\nint main(){int m,n;cin>>m>>n;long long sum=0;int count=0;\n\n\nfor(int x=m;x<=n;x++)if(prime(x)){sum+=x;count++;}\n\n\nlong long tenths=count?(20*sum+count)/(2*count):0;cout<<tenths/10<<'.'<<tenths%10<<'\\n';}",
+  "tests": [
+    {
+      "input": "2 2\n",
+      "output": "2.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 3\n",
+      "output": "2.5\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 5\n",
+      "output": "3.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 7\n",
+      "output": "4.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 7\n",
+      "output": "5.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 11\n",
+      "output": "6.5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 30\n",
+      "output": "18.7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11 31\n",
+      "output": "20.4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "90 99\n",
+      "output": "97.0\n",
+      "origin": "generated"
+    }
+  ]
+}

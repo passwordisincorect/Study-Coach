@@ -1,0 +1,59 @@
+{
+  "id": 58,
+  "title": "In ra các chữ số lẻ của một số có 8 chữ số",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/058",
+  "statement": "Bài 58: In ra các chữ số lẻ của một số có 8 chữ số. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\nusing namespace std;\n\nint main(){string s;cin>>s;bool found=false;\n\nfor(int i=(int)s.size()-1;i>=0;--i){int d=s[i]-'0';if(d%2==1){if(found)cout<<' ';cout<<d;found=true;}}\n\nif(!found)cout<<'-';cout<<'\\n';}",
+  "tests": [
+    {
+      "input": "12345678\n",
+      "output": "7 5 3 1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "97531864\n",
+      "output": "1 3 5 7 9\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "24682468\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11111111\n",
+      "output": "1 1 1 1 1 1 1 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "88888888\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "01234567\n",
+      "output": "7 5 3 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "00000000\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12003456\n",
+      "output": "5 3 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "98765432\n",
+      "output": "3 5 7 9\n",
+      "origin": "generated"
+    }
+  ]
+}

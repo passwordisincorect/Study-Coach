@@ -1,0 +1,59 @@
+{
+  "id": 173,
+  "title": "Chuyển ký tự sang mã ASCII",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/173",
+  "statement": "Bài 173: Chuyển ký tự sang mã ASCII. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <vector>\n\n#include <algorithm>\n\n#include <cctype>\n\n#include <sstream>\n\nusing namespace std;\n\nvector<string> chars(const string&s){\n\n vector<string> out;for(size_t i=0;i<s.size();){unsigned char b=s[i];\n\n size_t len=b<128?1:b<224?2:b<240?3:4;\n\n out.push_back(s.substr(i,len));i+=len;}return out;\n\n}\n\nint main(){\nchar c;cin.get(c);cout<<(int)(unsigned char)c<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "a\n",
+      "output": "97\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "A\n",
+      "output": "65\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "Z\n",
+      "output": "90\n",
+      "origin": "generated"
+    },
+    {
+      "input": "0\n",
+      "output": "48\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9\n",
+      "output": "57\n",
+      "origin": "generated"
+    },
+    {
+      "input": "!\n",
+      "output": "33\n",
+      "origin": "generated"
+    },
+    {
+      "input": "@\n",
+      "output": "64\n",
+      "origin": "generated"
+    },
+    {
+      "input": "#\n",
+      "output": "35\n",
+      "origin": "generated"
+    },
+    {
+      "input": "~\n",
+      "output": "126\n",
+      "origin": "generated"
+    }
+  ]
+}

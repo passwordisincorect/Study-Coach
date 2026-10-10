@@ -1,0 +1,94 @@
+{
+  "id": 204,
+  "title": "Tìm từ có độ dài lớn nhất",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/204",
+  "statement": "Bài 204: Tìm từ có độ dài lớn nhất. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n#include <string>\n\n\n\n#include <vector>\n\n\n\n#include <algorithm>\n\n\n\n#include <sstream>\n\n\n\n#include <limits>\n\n\n\nusing namespace std;\n\n\n\nint main(){\nstring s,w,best;getline(cin,s);istringstream in(s);while(in>>w)if(w.size()>best.size())best=w;cout<<best<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "Vinh Kim\n",
+      "output": "Vinh\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "Hello World\n",
+      "output": "Hello\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "One Two Three\n",
+      "output": "Three\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ABC DEF\n",
+      "output": "ABC\n",
+      "origin": "generated"
+    },
+    {
+      "input": "red blue green\n",
+      "output": "green\n",
+      "origin": "generated"
+    },
+    {
+      "input": "One Two\n",
+      "output": "One\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a bb ccc\n",
+      "output": "ccc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "aaa bbb ccc\n",
+      "output": "aaa\n",
+      "origin": "generated"
+    },
+    {
+      "input": "alpha beta gamma\n",
+      "output": "alpha\n",
+      "origin": "generated"
+    },
+    {
+      "input": "the quick brown fox\n",
+      "output": "quick\n",
+      "origin": "generated"
+    },
+    {
+      "input": "one two three four\n",
+      "output": "three\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AB CD EF GH\n",
+      "output": "AB\n",
+      "origin": "generated"
+    },
+    {
+      "input": "longword a\n",
+      "output": "longword\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a longword\n",
+      "output": "longword\n",
+      "origin": "generated"
+    },
+    {
+      "input": "XX XXX X\n",
+      "output": "XXX\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ha ha ha\n",
+      "output": "ha\n",
+      "origin": "generated"
+    }
+  ]
+}

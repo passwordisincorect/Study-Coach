@@ -1,0 +1,59 @@
+{
+  "id": 60,
+  "title": "Tìm chữ số lớn nhất và nhỏ nhất của một số có 8 chữ số",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/060",
+  "statement": "Bài 60: Tìm chữ số lớn nhất và nhỏ nhất của một số có 8 chữ số. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\nusing namespace std;\n\nint main(){string s;cin>>s;int lo=9,hi=0;for(char c:s){int d=c-'0';if(d<lo)lo=d;if(d>hi)hi=d;}cout<<hi<<' '<<lo<<'\\n';}",
+  "tests": [
+    {
+      "input": "12345678\n",
+      "output": "8 1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "99999999\n",
+      "output": "9 9\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "10000000\n",
+      "output": "1 0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "80000008\n",
+      "output": "8 0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "55555555\n",
+      "output": "5 5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10101010\n",
+      "output": "1 0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "98765432\n",
+      "output": "9 2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "08010101\n",
+      "output": "8 0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11111110\n",
+      "output": "1 0\n",
+      "origin": "generated"
+    }
+  ]
+}

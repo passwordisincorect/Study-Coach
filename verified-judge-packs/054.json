@@ -1,0 +1,69 @@
+{
+  "id": 54,
+  "title": "Tìm 2 chữ số đầu và 2 chữ số cuối",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/054",
+  "statement": "Bài 54: Tìm 2 chữ số đầu và 2 chữ số cuối. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <iomanip>\n\nusing namespace std;\n\nint main(){int n;cin>>n;cout<<n/10<<' '<<setw(2)<<setfill('0')<<n%100<<'\\n';}",
+  "tests": [
+    {
+      "input": "100\n",
+      "output": "10 00\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "101\n",
+      "output": "10 01\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "102\n",
+      "output": "10 02\n",
+      "origin": "generated"
+    },
+    {
+      "input": "109\n",
+      "output": "10 09\n",
+      "origin": "generated"
+    },
+    {
+      "input": "110\n",
+      "output": "11 10\n",
+      "origin": "generated"
+    },
+    {
+      "input": "200\n",
+      "output": "20 00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "505\n",
+      "output": "50 05\n",
+      "origin": "generated"
+    },
+    {
+      "input": "600\n",
+      "output": "60 00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "902\n",
+      "output": "90 02\n",
+      "origin": "generated"
+    },
+    {
+      "input": "990\n",
+      "output": "99 90\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999\n",
+      "output": "99 99\n",
+      "origin": "generated"
+    }
+  ]
+}

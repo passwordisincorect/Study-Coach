@@ -1,0 +1,59 @@
+{
+  "id": 82,
+  "title": "Rút gọn phân số",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/082",
+  "statement": "Bài 82: Rút gọn phân số. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n#include <numeric>\n\n\nusing namespace std;\n\n\nint main(){long long a,b;cin>>a>>b;long long g=gcd(a,b);cout<<a/g<<'/'<<b/g<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 1\n",
+      "output": "1/1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 999999937\n",
+      "output": "1/999999937\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "999999937 1\n",
+      "output": "999999937/1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 4\n",
+      "output": "1/2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100 150\n",
+      "output": "2/3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999999 999999999\n",
+      "output": "1/1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "25 35\n",
+      "output": "5/7\n",
+      "origin": "generated"
+    },
+    {
+      "input": "111111111 333333333\n",
+      "output": "1/3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "49 7\n",
+      "output": "7/1\n",
+      "origin": "generated"
+    }
+  ]
+}

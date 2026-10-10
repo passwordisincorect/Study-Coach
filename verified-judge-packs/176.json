@@ -1,0 +1,89 @@
+{
+  "id": 176,
+  "title": "In ký tự kề trước trong bảng chữ cái",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/176",
+  "statement": "Bài 176: In ký tự kề trước trong bảng chữ cái. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <vector>\n\n#include <algorithm>\n\n#include <cctype>\n\n#include <sstream>\n\nusing namespace std;\n\nvector<string> chars(const string&s){\n\n vector<string> out;for(size_t i=0;i<s.size();){unsigned char b=s[i];\n\n size_t len=b<128?1:b<224?2:b<240?3:4;\n\n out.push_back(s.substr(i,len));i+=len;}return out;\n\n}\n\nint main(){\nchar c;cin>>c;if(c=='a')c='z';else if(c=='A')c='Z';else c--;cout<<c<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "a\n",
+      "output": "z\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "c\n",
+      "output": "b\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "x\n",
+      "output": "w\n",
+      "origin": "generated"
+    },
+    {
+      "input": "y\n",
+      "output": "x\n",
+      "origin": "generated"
+    },
+    {
+      "input": "z\n",
+      "output": "y\n",
+      "origin": "generated"
+    },
+    {
+      "input": "A\n",
+      "output": "Z\n",
+      "origin": "generated"
+    },
+    {
+      "input": "B\n",
+      "output": "A\n",
+      "origin": "generated"
+    },
+    {
+      "input": "C\n",
+      "output": "B\n",
+      "origin": "generated"
+    },
+    {
+      "input": "X\n",
+      "output": "W\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Y\n",
+      "output": "X\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Z\n",
+      "output": "Y\n",
+      "origin": "generated"
+    },
+    {
+      "input": "q\n",
+      "output": "p\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Q\n",
+      "output": "P\n",
+      "origin": "generated"
+    },
+    {
+      "input": "R\n",
+      "output": "Q\n",
+      "origin": "generated"
+    },
+    {
+      "input": "r\n",
+      "output": "q\n",
+      "origin": "generated"
+    }
+  ]
+}

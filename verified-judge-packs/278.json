@@ -1,0 +1,74 @@
+{
+  "id": 278,
+  "title": "Cộng, trừ, nhân, chia hai phân số",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/278",
+  "statement": "Bài 278: Cộng, trừ, nhân, chia hai phân số. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <sstream>\n#include <map>\n#include <set>\n#include <numeric>\n#include <iomanip>\n#include <cmath>\n#include <tuple>\nusing namespace std;\nvoid row(const vector<long long>&a){for(size_t i=0;i<a.size();i++){if(i)cout<<' ';cout<<a[i];}cout<<'\\n';}\nvector<long long>ints(const string&s){vector<long long>a;istringstream in(s);long long x;while(in>>x)a.push_back(x);return a;}\nint tenth(const string&s){auto p=s.find('.');int base=stoi(s);if(p==string::npos)return base*10;int f=s[p+1]-'0';return base*10+(base<0?-f:f);}\nstring grade(int t){ostringstream o;if(t<0){o<<'-';t=-t;}o<<t/10<<'.'<<t%10;return o.str();}\npair<string,int> parseStudent(const string&s){auto p=s.find_last_of(' ');return {s.substr(0,p),tenth(s.substr(p+1))};}\nint main(){ios::sync_with_stdio(false);cin.tie(nullptr);long long a,b,c,d;cin>>a>>b>>c>>d;\nauto fraction=[](long long x,long long y){if(y<0){x=-x;y=-y;}long long g=gcd(x<0?-x:x,y);if(g){x/=g;y/=g;}cout<<x<<' '<<y<<'\\n';};\nfraction(a,b);fraction(c,d);fraction(a*d+c*b,b*d);fraction(a*d-c*b,b*d);fraction(a*c,b*d);fraction(a*d,b*c);}\n",
+  "tests": [
+    {
+      "input": "4 8 6 9\n",
+      "output": "1 2\n2 3\n7 6\n-1 6\n1 3\n3 4\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 2 1 2\n",
+      "output": "1 2\n1 2\n1 1\n0 1\n1 4\n1 1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 2 2 3\n",
+      "output": "1 2\n2 3\n7 6\n-1 6\n1 3\n3 4\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9 3 5 10\n",
+      "output": "3 1\n1 2\n7 2\n5 2\n3 2\n6 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7 13 8 9\n",
+      "output": "7 13\n8 9\n167 117\n-41 117\n56 117\n63 104\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 1 1 1\n",
+      "output": "1 1\n1 1\n2 1\n0 1\n1 1\n1 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 5 3 5\n",
+      "output": "2 5\n3 5\n1 1\n-1 5\n6 25\n2 3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 4 1 4\n",
+      "output": "3 4\n1 4\n1 1\n1 2\n3 16\n3 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99 100 1 100\n",
+      "output": "99 100\n1 100\n1 1\n49 50\n99 10000\n99 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100 1 1 100\n",
+      "output": "100 1\n1 100\n10001 100\n9999 100\n1 1\n10000 1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "25 75 50 100\n",
+      "output": "1 3\n1 2\n5 6\n-1 6\n1 6\n2 3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 100 100 1\n",
+      "output": "1 100\n100 1\n10001 100\n-9999 100\n1 1\n1 10000\n",
+      "origin": "generated"
+    }
+  ]
+}

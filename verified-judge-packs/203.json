@@ -1,0 +1,114 @@
+{
+  "id": 203,
+  "title": "Tìm ký tự có mã ASCII nhỏ nhất",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/203",
+  "statement": "Bài 203: Tìm ký tự có mã ASCII nhỏ nhất. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <string>\n\n#include <vector>\n\n#include <algorithm>\n\n#include <sstream>\n\n#include <limits>\n\nusing namespace std;\n\nint main(){\nstring s;getline(cin,s);char best=127;for(unsigned char c:s)if((c>='a'&&c<='z')||(c>='A'&&c<='Z'))if(c<best)best=c;\n\ncout<<best<<\": \"<<(int)(unsigned char)best<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "ab\n",
+      "output": "a: 97\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "XYuv\n",
+      "output": "X: 88\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "abc\n",
+      "output": "a: 97\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Hello\n",
+      "output": "H: 72\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abcdef\n",
+      "output": "a: 97\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Python\n",
+      "output": "P: 80\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tien\n",
+      "output": "T: 84\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Vinh Kim\n",
+      "output": "K: 75\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Hello World\n",
+      "output": "H: 72\n",
+      "origin": "generated"
+    },
+    {
+      "input": "A\n",
+      "output": "A: 65\n",
+      "origin": "generated"
+    },
+    {
+      "input": "z\n",
+      "output": "z: 122\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AAA\n",
+      "output": "A: 65\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abz\n",
+      "output": "a: 97\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ZZZ\n",
+      "output": "Z: 90\n",
+      "origin": "generated"
+    },
+    {
+      "input": "BBB\n",
+      "output": "B: 66\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Programing\n",
+      "output": "P: 80\n",
+      "origin": "generated"
+    },
+    {
+      "input": "One Two Three\n",
+      "output": "O: 79\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ABC DEF\n",
+      "output": "A: 65\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ababa\n",
+      "output": "a: 97\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AaBbCc\n",
+      "output": "A: 65\n",
+      "origin": "generated"
+    }
+  ]
+}

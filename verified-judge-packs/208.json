@@ -1,0 +1,194 @@
+{
+  "id": 208,
+  "title": "Thêm ký tự x sao cho xâu s có độ dài là n, và s nằm ở bên trái",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/208",
+  "statement": "Bài 208: Thêm ký tự x sao cho xâu s có độ dài là n, và s nằm ở bên trái. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <string>\n\n\n\n\n#include <vector>\n\n\n\n\n#include <algorithm>\n\n\n\n\n#include <sstream>\n\n\n\n\n#include <limits>\n\n\n\n\nusing namespace std;\n\n\n\n\nint main(){\nstring s,x;getline(cin,s);getline(cin,x);int n;cin>>n;cout<<s<<string(n-(int)s.size(),x[0])<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "ab\n@\n2\n",
+      "output": "ab\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "ab\n@\n3\n",
+      "output": "ab@\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "XYuv\n$\n5\n",
+      "output": "XYuv$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "XYuv\n$\n6\n",
+      "output": "XYuv$$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc\n-\n5\n",
+      "output": "abc--\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abc\n-\n6\n",
+      "output": "abc---\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Hello\n*\n8\n",
+      "output": "Hello***\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Hello\n*\n9\n",
+      "output": "Hello****\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abcdef\n@\n10\n",
+      "output": "abcdef@@@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abcdef\n@\n11\n",
+      "output": "abcdef@@@@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Python\n$\n11\n",
+      "output": "Python$$$$$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Python\n$\n12\n",
+      "output": "Python$$$$$$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tien\n-\n10\n",
+      "output": "Tien------\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tien\n-\n11\n",
+      "output": "Tien-------\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Vinh Kim\n*\n8\n",
+      "output": "Vinh Kim\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Vinh Kim\n*\n9\n",
+      "output": "Vinh Kim*\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tran Phi An Binh\n@\n17\n",
+      "output": "Tran Phi An Binh@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Tran Phi An Binh\n@\n18\n",
+      "output": "Tran Phi An Binh@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Hello World\n$\n13\n",
+      "output": "Hello World$$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Hello World\n$\n14\n",
+      "output": "Hello World$$$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "A\n-\n4\n",
+      "output": "A---\n",
+      "origin": "generated"
+    },
+    {
+      "input": "A\n-\n5\n",
+      "output": "A----\n",
+      "origin": "generated"
+    },
+    {
+      "input": "z\n*\n5\n",
+      "output": "z****\n",
+      "origin": "generated"
+    },
+    {
+      "input": "z\n*\n6\n",
+      "output": "z*****\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AAA\n@\n8\n",
+      "output": "AAA@@@@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AAA\n@\n9\n",
+      "output": "AAA@@@@@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abz\n$\n9\n",
+      "output": "abz$$$$$$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "abz\n$\n10\n",
+      "output": "abz$$$$$$$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ZZZ\n-\n3\n",
+      "output": "ZZZ\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ZZZ\n-\n4\n",
+      "output": "ZZZ-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "BBB\n*\n4\n",
+      "output": "BBB*\n",
+      "origin": "generated"
+    },
+    {
+      "input": "BBB\n*\n5\n",
+      "output": "BBB**\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Programing\n@\n12\n",
+      "output": "Programing@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "Programing\n@\n13\n",
+      "output": "Programing@@@\n",
+      "origin": "generated"
+    },
+    {
+      "input": "One Two Three\n$\n16\n",
+      "output": "One Two Three$$$\n",
+      "origin": "generated"
+    },
+    {
+      "input": "One Two Three\n$\n17\n",
+      "output": "One Two Three$$$$\n",
+      "origin": "generated"
+    }
+  ]
+}

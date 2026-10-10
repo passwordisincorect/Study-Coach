@@ -1,0 +1,69 @@
+{
+  "id": 86,
+  "title": "In các chữ số chẵn của một số nguyên n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/086",
+  "statement": "Bài 86: In các chữ số chẵn của một số nguyên n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){unsigned long long n;cin>>n;bool first=true;while(n){int d=n%10;if(d%2==0){if(!first)cout<<' ';cout<<d;first=false;}n/=10;}\n\n\nif(first)cout<<'-';cout<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "-\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "2\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10101\n",
+      "output": "0 0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "13579\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "24680\n",
+      "output": "0 8 6 4 2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11111111\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "902001\n",
+      "output": "0 0 2 0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999999\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9999999999999999999\n",
+      "output": "-\n",
+      "origin": "generated"
+    }
+  ]
+}

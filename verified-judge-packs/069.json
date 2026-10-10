@@ -1,0 +1,69 @@
+{
+  "id": 69,
+  "title": "Tính trung bình cộng những số tự nhiên chia hết cho 5 từ 1 đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/069",
+  "statement": "Bài 69: Tính trung bình cộng những số tự nhiên chia hết cho 5 từ 1 đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n#include <iomanip>\n\nusing namespace std;\n\nint main(){long long n;cin>>n;long long k=n/5;\n\ncout<<fixed<<setprecision(1)<<(k?5.0*(k+1)/2:0.0)<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "0.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4\n",
+      "output": "0.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "5\n",
+      "output": "5.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6\n",
+      "output": "5.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9\n",
+      "output": "5.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "7.5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "14\n",
+      "output": "7.5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "15\n",
+      "output": "10.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "20\n",
+      "output": "12.5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99\n",
+      "output": "50.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "52.5\n",
+      "origin": "generated"
+    }
+  ]
+}

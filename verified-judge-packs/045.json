@@ -1,0 +1,79 @@
+{
+  "id": 45,
+  "title": "Tìm số ngày của một tháng",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/045",
+  "statement": "Bài 45: Tìm số ngày của một tháng. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int month,year;cin>>month>>year;\n\nbool leap=year%400==0||(year%4==0&&year%100!=0);\n\nint d=month==2?(leap?29:28):((month==4||month==6||month==9||month==11)?30:31);\n\ncout<<d<<'\\n';}",
+  "tests": [
+    {
+      "input": "2 2000\n",
+      "output": "29\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 1900\n",
+      "output": "28\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 2024\n",
+      "output": "29\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 2025\n",
+      "output": "28\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 1\n",
+      "output": "28\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4 2026\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12 2026\n",
+      "output": "31\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6 2026\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9 2026\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11 2026\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 9999\n",
+      "output": "31\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 2400\n",
+      "output": "29\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2 2100\n",
+      "output": "28\n",
+      "origin": "generated"
+    }
+  ]
+}

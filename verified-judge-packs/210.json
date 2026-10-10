@@ -1,0 +1,94 @@
+{
+  "id": 210,
+  "title": "Tách tên trong họ và tên",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/210",
+  "statement": "Bài 210: Tách tên trong họ và tên. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <string>\n\n\n\n\n#include <vector>\n\n\n\n\n#include <algorithm>\n\n\n\n\n#include <sstream>\n\n\n\n\n#include <limits>\n\n\n\n\nusing namespace std;\n\n\n\n\nint main(){\nstring s;getline(cin,s);istringstream in(s);string word,last;while(in>>word)last=word;cout<<last<<'\\n';\n}\n",
+  "tests": [
+    {
+      "input": "Vinh Kim\n",
+      "output": "Kim\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "Hello World\n",
+      "output": "World\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "One Two Three\n",
+      "output": "Three\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ABC DEF\n",
+      "output": "DEF\n",
+      "origin": "generated"
+    },
+    {
+      "input": "red blue green\n",
+      "output": "green\n",
+      "origin": "generated"
+    },
+    {
+      "input": "One Two\n",
+      "output": "Two\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a bb ccc\n",
+      "output": "ccc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "aaa bbb ccc\n",
+      "output": "ccc\n",
+      "origin": "generated"
+    },
+    {
+      "input": "alpha beta gamma\n",
+      "output": "gamma\n",
+      "origin": "generated"
+    },
+    {
+      "input": "the quick brown fox\n",
+      "output": "fox\n",
+      "origin": "generated"
+    },
+    {
+      "input": "one two three four\n",
+      "output": "four\n",
+      "origin": "generated"
+    },
+    {
+      "input": "AB CD EF GH\n",
+      "output": "GH\n",
+      "origin": "generated"
+    },
+    {
+      "input": "longword a\n",
+      "output": "a\n",
+      "origin": "generated"
+    },
+    {
+      "input": "a longword\n",
+      "output": "longword\n",
+      "origin": "generated"
+    },
+    {
+      "input": "XX XXX X\n",
+      "output": "X\n",
+      "origin": "generated"
+    },
+    {
+      "input": "ha ha ha\n",
+      "output": "ha\n",
+      "origin": "generated"
+    }
+  ]
+}

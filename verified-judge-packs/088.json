@@ -1,0 +1,59 @@
+{
+  "id": 88,
+  "title": "Tính tổng các chữ số lớn hơn số x của một số nguyên n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/088",
+  "statement": "Bài 88: Tính tổng các chữ số lớn hơn số x của một số nguyên n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){unsigned long long n;int x;cin>>n>>x;int sum=0;while(n){int d=n%10;if(d>x)sum+=d;n/=10;}cout<<sum<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 0\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "123456789 0\n",
+      "output": "45\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "123456789 9\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "987654321 5\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11111111 1\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "22222222 1\n",
+      "output": "16\n",
+      "origin": "generated"
+    },
+    {
+      "input": "123456789 5\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10000000000000000 0\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10101 1\n",
+      "output": "0\n",
+      "origin": "generated"
+    }
+  ]
+}

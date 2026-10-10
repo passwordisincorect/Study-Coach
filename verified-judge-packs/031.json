@@ -1,0 +1,54 @@
+{
+  "id": 31,
+  "title": "So sánh điểm",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/031",
+  "statement": "Bài 31: So sánh điểm. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){ double a,b;cin>>a>>b;\n\nif(a>b)cout<<\"An gioi hon\\n\";\n\nelse if(b>a)cout<<\"Binh gioi hon\\n\";\n\nelse cout<<\"Bang nhau\\n\"; }",
+  "tests": [
+    {
+      "input": "0\n10\n",
+      "output": "Binh gioi hon\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "10\n0\n",
+      "output": "An gioi hon\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "0\n0\n",
+      "output": "Bang nhau\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n10\n",
+      "output": "Bang nhau\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7.5\n7.4\n",
+      "output": "An gioi hon\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7.4\n7.5\n",
+      "output": "Binh gioi hon\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6.25\n6.25\n",
+      "output": "Bang nhau\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9.99\n10\n",
+      "output": "Binh gioi hon\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 264,
+  "title": "Viết hàm kiểm tra chuỗi có đối xứng hay không và áp dụng",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/264",
+  "statement": "Bài 264: Viết hàm kiểm tra chuỗi có đối xứng hay không và áp dụng. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n#include <vector>\n\n\n\n#include <string>\n\n\n\n#include <sstream>\n\n\n\n#include <cmath>\n\n\n\n#include <algorithm>\n\n\n\nusing namespace std;\n\n\n\nbool prime(long long x){if(x<2)return false;for(long long k=2;k*k<=x;k++)if(x%k==0)return false;return true;}\n\n\n\nlong long digitSum(long long x){if(x<0)x=-x;long long t=0;while(x){t+=x%10;x/=10;}return t;}\n\n\n\nlong long properSum(long long x){if(x<=1)return 0;long long s=1;for(long long d=2;d*d<=x;d++)if(x%d==0){s+=d;if(d!=x/d)s+=x/d;}return s;}\n\n\n\nbool square(long long n){if(n<0)return false;long long k=(long long)sqrt((long double)n);while(k*k<n)k++;return k*k==n;}\n\n\n\nbool triangle(long long n){if(n<=0)return false;for(long long k=1;k*(k+1)/2<=n;k++)if(k*(k+1)/2==n)return true;return false;}\n\n\n\nbool pronic(long long n){if(n<0)return false;for(long long k=0;k*(k+1)<=n;k++)if(k*(k+1)==n)return true;return false;}\n\n\n\nlong long divSum(long long n){if(n<0)n=-n;if(n==0)return 0;long long s=0;for(long long d=1;d*d<=n;d++)if(n%d==0){s+=d;if(d*d!=n)s+=n/d;}return s;}\n\n\n\nlong long divCount(long long n){if(n<0)n=-n;if(n==0)return 0;long long count=0;for(long long d=1;d*d<=n;d++)if(n%d==0)count+=d*d==n?1:2;return count;}\n\n\n\nlong long reverseInt(long long n){long long v=n<0?-n:n,ret=0;while(v){ret=ret*10+v%10;v/=10;}return n<0?-ret:ret;}\n\n\n\nlong long fact(long long n){long long out=1;for(long long k=2;k<=n;k++)out*=k;return out;}\n\n\n\nlong long powInt(long long x,long long n){long long out=1;for(int j=0;j<n;j++)out*=x;return out;}\n\n\n\nbool smith(long long n){if(n<=1||prime(n))return false;long long sum=0,x=n;for(long long k=2;k*k<=x;k++)while(x%k==0){sum+=digitSum(k);x/=k;}if(x>1)sum+=digitSum(x);return sum==digitSum(n);}\n\n\n\nint main(){\nint m;cin>>m;cin.ignore();while(m--){string s;getline(cin,s);cout<<(equal(s.begin(),s.end(),s.rbegin())?\"YES\":\"NO\")<<'\\n';}\n}\n",
+  "tests": [
+    {
+      "input": "4\na\nAA\nabba\nAa\n",
+      "output": "YES\nYES\nYES\nNO\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "4\na b a\n a \n  a  \naba\n",
+      "output": "YES\nYES\nYES\nYES\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\nX\nx x\nabba abba\n",
+      "output": "YES\nYES\nYES\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\n    left    \nright   \n  both  \n",
+      "output": "NO\nNO\nNO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nxyzyx\nabcca\n12321\n",
+      "output": "YES\nNO\nYES\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nPython\n    Python\n",
+      "output": "NO\nNO\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nlevel\nLevel\nnoon\n",
+      "output": "YES\nNO\nYES\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\naa\nbb\naabbaa\n",
+      "output": "YES\nYES\nYES\n",
+      "origin": "generated"
+    }
+  ]
+}

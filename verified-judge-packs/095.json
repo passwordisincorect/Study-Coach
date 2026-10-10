@@ -1,0 +1,69 @@
+{
+  "id": 95,
+  "title": "Tính số gốc của một số nguyên n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/095",
+  "statement": "Bài 95: Tính số gốc của một số nguyên n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){unsigned long long n;cin>>n;while(n>=10){unsigned long long sum=0;while(n){sum+=n%10;n/=10;}n=sum;}cout<<n<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "9\n",
+      "output": "9\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "10\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9999\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999999\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "9999999999999999999\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1234567890123456789\n",
+      "output": "9\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Never publish local learner progress or saved sessions.
+/data/
+/source-evidence/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite*
+*.pid
+*.bak
+*.bak-*
+*.pre-*
+*.log
+*.tmp
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+.vscode/
+.idea/
+.pytest_cache/
+.DS_Store
+Thumbs.db

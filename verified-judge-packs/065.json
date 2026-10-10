@@ -1,0 +1,59 @@
+{
+  "id": 65,
+  "title": "Tính tổng những số tự nhiên chẵn từ 1 đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/065",
+  "statement": "Bài 65: Tính tổng những số tự nhiên chẵn từ 1 đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){long long n;cin>>n;long long k=n/2;cout<<k*(k+1)<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "2\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99\n",
+      "output": "2450\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "2550\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999\n",
+      "output": "249999500000\n",
+      "origin": "generated"
+    }
+  ]
+}

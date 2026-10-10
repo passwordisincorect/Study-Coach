@@ -1,0 +1,54 @@
+{
+  "id": 71,
+  "title": "In những số tự nhiên từ m đến n",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/071",
+  "statement": "Bài 71: In những số tự nhiên từ m đến n. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int m,n;cin>>m>>n;for(int i=m;i<=n;i++){if(i>m)cout<<' ';cout<<i;}cout<<'\\n';}",
+  "tests": [
+    {
+      "input": "1 1\n",
+      "output": "1\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1 2\n",
+      "output": "1 2\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2 2\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5 8\n",
+      "output": "5 6 7 8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10 30\n",
+      "output": "10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99 120\n",
+      "output": "99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120\n",
+      "origin": "generated"
+    },
+    {
+      "input": "6 8\n",
+      "output": "6 7 8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3 5\n",
+      "output": "3 4 5\n",
+      "origin": "generated"
+    }
+  ]
+}

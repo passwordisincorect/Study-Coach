@@ -1,0 +1,229 @@
+{
+  "id": 271,
+  "title": "Định dạng ngày và giờ",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/271",
+  "statement": "Bài 271: Định dạng ngày và giờ. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <string>\n\n\n\n\n#include <iomanip>\n\n\n\n\n#include <sstream>\n\n\n\n\nusing namespace std;\n\n\n\n\nstring pad(int x,int width){ostringstream o;o<<setfill('0')<<setw(width)<<x;return o.str();}\n\n\n\n\nint main(){string line,fmt;getline(cin,line);getline(cin,fmt);\n\n\n\n\nint y=stoi(line.substr(0,4)),M=stoi(line.substr(5,2)),d=stoi(line.substr(8,2)),h=stoi(line.substr(11,2)),m=stoi(line.substr(14,2)),s=stoi(line.substr(17,2));\n\n\n\n\nfor(size_t i=0;i<fmt.size();){string tail=fmt.substr(i);\n\n\n\n\nif(tail.rfind(\"yyyy\",0)==0){cout<<pad(y,4);i+=4;}\n\n\n\n\nelse if(tail.rfind(\"yy\",0)==0){cout<<pad(y%100,2);i+=2;}\n\n\n\n\nelse if(tail.rfind(\"MM\",0)==0){cout<<pad(M,2);i+=2;}\n\n\n\n\nelse if(tail.rfind(\"dd\",0)==0){cout<<pad(d,2);i+=2;}\n\n\n\n\nelse if(tail.rfind(\"hh\",0)==0){cout<<pad(h,2);i+=2;}\n\n\n\n\nelse if(tail.rfind(\"mm\",0)==0){cout<<pad(m,2);i+=2;}\n\n\n\n\nelse if(tail.rfind(\"ss\",0)==0){cout<<pad(s,2);i+=2;}\n\n\n\n\nelse{char c=fmt[i++];switch(c){case 'M':cout<<M;break;case 'd':cout<<d;break;case 'h':cout<<h;break;case 'm':cout<<m;break;case 's':cout<<s;break;default:cout<<c;}}}\n\n\n\n\ncout<<'\\n';}",
+  "tests": [
+    {
+      "input": "2024-04-03 04:05:03\nyyyy-MM-dd hh:mm:ss\n",
+      "output": "2024-04-03 04:05:03\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2024-04-03 04:05:03\ndd/M/yy hh:m:s\n",
+      "output": "03/4/24 04:5:3\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2024-04-03 04:05:03\nyy-M-d h:m:s\n",
+      "output": "24-4-3 4:5:3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-04-03 04:05:03\nyyyy/M/dd\n",
+      "output": "2024/4/03\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-04-03 04:05:03\ndd-MM-yyyy hh:mm:ss\n",
+      "output": "03-04-2024 04:05:03\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-04-03 04:05:03\nyy/M/d hh:mm:ss\n",
+      "output": "24/4/3 04:05:03\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-04-03 04:05:03\nd/M/yyyy h:m:s\n",
+      "output": "3/4/2024 4:5:3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-04-03 04:05:03\nyyyy M d h m s\n",
+      "output": "2024 4 3 4 5 3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-02-03 14:45:30\nyyyy-MM-dd hh:mm:ss\n",
+      "output": "2024-02-03 14:45:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-02-03 14:45:30\ndd/M/yy hh:m:s\n",
+      "output": "03/2/24 14:45:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-02-03 14:45:30\nyy-M-d h:m:s\n",
+      "output": "24-2-3 14:45:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-02-03 14:45:30\nd-MM-yyyy hh:m:s\n",
+      "output": "3-02-2024 14:45:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-02-03 14:45:30\ndd-MM-yyyy hh:mm:ss\n",
+      "output": "03-02-2024 14:45:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-02-03 14:45:30\nyy/M/d hh:mm:ss\n",
+      "output": "24/2/3 14:45:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-02-03 14:45:30\nd/M/yyyy h:m:s\n",
+      "output": "3/2/2024 14:45:30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2024-02-03 14:45:30\nyyyy M d h m s\n",
+      "output": "2024 2 3 14 45 30\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\nyyyy-MM-dd hh:mm:ss\n",
+      "output": "2000-01-01 00:00:00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\ndd/M/yy hh:m:s\n",
+      "output": "01/1/00 00:0:0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\nyy-M-d h:m:s\n",
+      "output": "00-1-1 0:0:0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\nyyyy/M/dd\n",
+      "output": "2000/1/01\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\nd-MM-yyyy hh:m:s\n",
+      "output": "1-01-2000 00:0:0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\ndd-MM-yyyy hh:mm:ss\n",
+      "output": "01-01-2000 00:00:00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\nyy/M/d hh:mm:ss\n",
+      "output": "00/1/1 00:00:00\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\nd/M/yyyy h:m:s\n",
+      "output": "1/1/2000 0:0:0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2000-01-01 00:00:00\nyyyy M d h m s\n",
+      "output": "2000 1 1 0 0 0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\nyyyy-MM-dd hh:mm:ss\n",
+      "output": "1999-12-31 23:59:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\ndd/M/yy hh:m:s\n",
+      "output": "31/12/99 23:59:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\nyy-M-d h:m:s\n",
+      "output": "99-12-31 23:59:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\nyyyy/M/dd\n",
+      "output": "1999/12/31\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\nd-MM-yyyy hh:m:s\n",
+      "output": "31-12-1999 23:59:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\ndd-MM-yyyy hh:mm:ss\n",
+      "output": "31-12-1999 23:59:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\nyy/M/d hh:mm:ss\n",
+      "output": "99/12/31 23:59:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\nd/M/yyyy h:m:s\n",
+      "output": "31/12/1999 23:59:59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1999-12-31 23:59:59\nyyyy M d h m s\n",
+      "output": "1999 12 31 23 59 59\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\nyyyy-MM-dd hh:mm:ss\n",
+      "output": "2026-10-10 17:05:06\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\ndd/M/yy hh:m:s\n",
+      "output": "10/10/26 17:5:6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\nyy-M-d h:m:s\n",
+      "output": "26-10-10 17:5:6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\nyyyy/M/dd\n",
+      "output": "2026/10/10\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\nd-MM-yyyy hh:m:s\n",
+      "output": "10-10-2026 17:5:6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\ndd-MM-yyyy hh:mm:ss\n",
+      "output": "10-10-2026 17:05:06\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\nyy/M/d hh:mm:ss\n",
+      "output": "26/10/10 17:05:06\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\nd/M/yyyy h:m:s\n",
+      "output": "10/10/2026 17:5:6\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2026-10-10 17:05:06\nyyyy M d h m s\n",
+      "output": "2026 10 10 17 5 6\n",
+      "origin": "generated"
+    }
+  ]
+}

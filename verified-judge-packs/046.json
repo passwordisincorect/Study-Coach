@@ -1,0 +1,59 @@
+{
+  "id": 46,
+  "title": "Tính nút của biển số xe",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/046",
+  "statement": "Bài 46: Tính nút của biển số xe. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int n,sum=0;cin>>n;while(n){sum+=n%10;n/=10;}\n\nint value=sum%10;cout<<value<<'\\n'<<(value==9?\"Yes\":\"No\")<<'\\n';}",
+  "tests": [
+    {
+      "input": "10000\n",
+      "output": "1\nNo\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "99999\n",
+      "output": "5\nNo\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "12345\n",
+      "output": "5\nNo\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99990\n",
+      "output": "6\nNo\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11111\n",
+      "output": "5\nNo\n",
+      "origin": "generated"
+    },
+    {
+      "input": "90828\n",
+      "output": "7\nNo\n",
+      "origin": "generated"
+    },
+    {
+      "input": "80001\n",
+      "output": "9\nYes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12006\n",
+      "output": "9\nYes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "80019\n",
+      "output": "8\nNo\n",
+      "origin": "generated"
+    }
+  ]
+}

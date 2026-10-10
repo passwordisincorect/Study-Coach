@@ -1,0 +1,64 @@
+{
+  "id": 99,
+  "title": "Tính trung bình cộng k số tự nhiên đầu tiên không chia hết cho 3",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/099",
+  "statement": "Bài 99: Tính trung bình cộng k số tự nhiên đầu tiên không chia hết cho 3. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){long long k;cin>>k;long long q=k/2;long long sum=3*q*q+(k%2?3*q+1:0);\n\n\nlong long ten=(20*sum+k)/(2*k);cout<<ten/10<<'.'<<ten%10<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "1.0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "1.5\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\n",
+      "output": "2.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n",
+      "output": "3.8\n",
+      "origin": "generated"
+    },
+    {
+      "input": "7\n",
+      "output": "5.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "8\n",
+      "output": "6.0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "10\n",
+      "output": "7.5\n",
+      "origin": "generated"
+    },
+    {
+      "input": "11\n",
+      "output": "8.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "99\n",
+      "output": "74.3\n",
+      "origin": "generated"
+    },
+    {
+      "input": "998\n",
+      "output": "748.5\n",
+      "origin": "generated"
+    }
+  ]
+}

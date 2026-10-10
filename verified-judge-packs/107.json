@@ -1,0 +1,69 @@
+{
+  "id": 107,
+  "title": "Kiểm tra một số nguyên có là số hoàn hảo (Perfect)",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/107",
+  "statement": "Bài 107: Kiểm tra một số nguyên có là số hoàn hảo (Perfect). Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\nusing namespace std;\n\n\nint main(){long long n;cin>>n;long long sum=0;for(long long d=1;d*d<=n;d++)if(n%d==0){if(d<n)sum+=d;long long q=n/d;if(q!=d&&q<n)sum+=q;}cout<<(sum==n?\"Yes\":\"No\")<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "No\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "2\n",
+      "output": "No\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "3\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "4\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "5\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "28\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "496\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "8128\n",
+      "output": "Yes\n",
+      "origin": "generated"
+    },
+    {
+      "input": "12\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "100\n",
+      "output": "No\n",
+      "origin": "generated"
+    },
+    {
+      "input": "999999937\n",
+      "output": "No\n",
+      "origin": "generated"
+    }
+  ]
+}

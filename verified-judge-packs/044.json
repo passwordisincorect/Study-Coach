@@ -1,0 +1,54 @@
+{
+  "id": 44,
+  "title": "Kiểm tra chiều cao",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/044",
+  "statement": "Bài 44: Kiểm tra chiều cao. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){int n;cin>>n;cout<<(n>180?\"Huu cao co\":n<100?\"Nam lun cute\":\"Binh thuong\")<<'\\n';}",
+  "tests": [
+    {
+      "input": "1\n",
+      "output": "Nam lun cute\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "99\n",
+      "output": "Nam lun cute\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "100\n",
+      "output": "Binh thuong\n",
+      "origin": "generated"
+    },
+    {
+      "input": "101\n",
+      "output": "Binh thuong\n",
+      "origin": "generated"
+    },
+    {
+      "input": "179\n",
+      "output": "Binh thuong\n",
+      "origin": "generated"
+    },
+    {
+      "input": "180\n",
+      "output": "Binh thuong\n",
+      "origin": "generated"
+    },
+    {
+      "input": "181\n",
+      "output": "Huu cao co\n",
+      "origin": "generated"
+    },
+    {
+      "input": "249\n",
+      "output": "Huu cao co\n",
+      "origin": "generated"
+    }
+  ]
+}

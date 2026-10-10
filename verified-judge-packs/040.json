@@ -1,0 +1,64 @@
+{
+  "id": 40,
+  "title": "Kiểm tra hai số nguyên cùng dấu hay khác dấu",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/040",
+  "statement": "Bài 40: Kiểm tra hai số nguyên cùng dấu hay khác dấu. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\nusing namespace std;\n\nint main(){long long a,b;cin>>a>>b;\n\nif(a==0||b==0)cout<<\"0\\n\";\n\nelse if((a>0)==(b>0))cout<<\"1\\n\";\n\nelse cout<<\"-1\\n\";}",
+  "tests": [
+    {
+      "input": "0 0\n",
+      "output": "0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "0 -7\n",
+      "output": "0\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "-7 0\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 1\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1 -1\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1 -1\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1 1\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1000000000 1000000000\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1000000000 1000000000\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "input": "-1000000000 -1000000000\n",
+      "output": "1\n",
+      "origin": "generated"
+    }
+  ]
+}

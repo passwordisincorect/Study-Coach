@@ -1,0 +1,54 @@
+{
+  "id": 270,
+  "title": "Viết hàm in ra các ký tự in hoa trong chuỗi",
+  "source_url": "https://xn--300bicode-t1a.vn/problem/270",
+  "statement": "Bài 270: Viết hàm in ra các ký tự in hoa trong chuỗi. Mở liên kết đề gốc để đọc đầy đủ yêu cầu. Bản phát hành công khai không sao chép đề bài nguồn.",
+  "input": "Xem định dạng dữ liệu tại trang đề gốc. Các ví dụ hiển thị bên dưới là do Study Coach tự tạo, không phải mẫu chính thức.",
+  "output": "Xem quy định kết quả trên trang đề gốc. Đáp án được đối chiếu bằng bộ test cục bộ do Study Coach tạo.",
+  "hint": "Đọc đề qua liên kết ngoài và thử nghiệm trên ví dụ do Study Coach tự tạo.",
+  "official_samples_count": 0,
+  "review_policy": "public_generated_v1",
+  "reference_cpp": "#include <iostream>\n\n\n\n\n#include <string>\n\n\n\n\nusing namespace std;\n\n\n\n\nint main(){int n;cin>>n;cin.ignore();while(n--){string s;getline(cin,s);bool has=false;for(char c:s)if('A'<=c&&c<='Z'){cout<<c;has=true;}if(!has)cout<<'-';cout<<'\\n';}}",
+  "tests": [
+    {
+      "input": "1\nAbC\n",
+      "output": "AC\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\nhello world\n",
+      "output": "-\n",
+      "origin": "demonstration"
+    },
+    {
+      "input": "1\nTHIS\n",
+      "output": "THIS\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\na B c D\n",
+      "output": "BD\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\nABCxyz\naaBBB\n",
+      "output": "ABC\nBBB\n",
+      "origin": "generated"
+    },
+    {
+      "input": "1\n-123-\n",
+      "output": "-\n",
+      "origin": "generated"
+    },
+    {
+      "input": "2\n\nABC\n",
+      "output": "-\nABC\n",
+      "origin": "generated"
+    },
+    {
+      "input": "3\nAA\nzz\nBBBB\n",
+      "output": "AA\n-\nBBBB\n",
+      "origin": "generated"
+    }
+  ]
+}
