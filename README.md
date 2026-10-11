@@ -25,6 +25,34 @@ Both packages include **Python and the C++ compiler**, so you do **not** need Py
 
 **Important:** GitHub's green **Code → Download ZIP** contains source code, not the ready-to-run Windows package. Use **Releases** for the installer or portable ZIP. Release files appear after the build workflow completes.
 
+## Windows download verification and release signing
+
+Every **new signed Windows release** publishes three assets: the installer EXE, the portable ZIP, and SHA256SUMS.txt. Download all three from the **same GitHub release tag**. To verify locally in PowerShell:
+
+```powershell
+Get-FileHash .\StudyCoach-Windows-Setup.exe -Algorithm SHA256
+Get-FileHash .\StudyCoach-Windows-Portable.zip -Algorithm SHA256
+Get-AuthenticodeSignature .\StudyCoach-Windows-Setup.exe | Format-List Status,SignerCertificate,TimeStamperCertificate
+```
+
+Compare the SHA-256 values to SHA256SUMS.txt **and** confirm the manifest was obtained from the intended release. Check that Authenticode shows Status = Valid and an expected verified signer. SHA-256 detects changes but does not independently authenticate the publisher. Do not bypass Windows SmartScreen if the origin or signer is uncertain.
+
+### Maintainer: configuring a signed release
+
+A publicly trusted **code-signing certificate with accessible signing permissions** is required. A self-signed certificate does not establish Windows publisher trust. The workflow accepts a compatible PFX for automated signing, provisioned only through GitHub Actions repository secrets:
+
+- STUDY_COACH_SIGNING_PFX_BASE64: base64 bytes of the PFX (one line).
+- STUDY_COACH_SIGNING_PFX_PASSWORD: password for the PFX.
+
+Never commit, paste into issues, or distribute the certificate, PFX, its private key, or its password. Hardware-backed or cloud-managed code-signing keys might **not** be exportable as PFX; those require a separate signing provider integration before the workflow can use them. Prefer a dedicated restricted signing identity over a reusable personal certificate.
+
+On pull requests and untagged manual runs, binaries may be unsigned and Defender may be unavailable, but both conditions are explicit in the job output. On version tags (v*), the pipeline fails if the signing credentials are absent, signatures/timestamps are invalid, Defender is disabled/outdated, its scan fails, or a threat is reported. Only a fully passing Windows job can upload and publish its artifacts. The publication job alone has contents:write permission.
+
+The Defender step requires a Windows runner with working Microsoft Defender, current signature definitions and permission to perform a custom scan. If the GitHub-hosted runner does not provide a working antivirus engine, the tag build **must fail closed**; configure a trusted Windows runner instead of silently skipping the scan. Do not claim that a release has been scanned unless the scan job succeeded.
+
+A signed package can still receive SmartScreen warnings until its reputation is established. Signing and checksums improve authenticity and integrity but are not malware guarantees.
+
+
 ## Developer-only Windows source setup (PowerShell)
 
 ```powershell
