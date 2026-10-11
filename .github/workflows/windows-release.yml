@@ -73,7 +73,11 @@ jobs:
       - name: Build installer EXE
         shell: pwsh
         run: |
-          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "packaging\windows\StudyCoach.iss"
+          if ($env:GITHUB_REF -like 'refs/tags/v*' -and $env:GITHUB_REF -notmatch '^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$') {
+            throw 'Release tags must be vMAJOR.MINOR.PATCH'
+          }
+          $version = if ($env:GITHUB_REF -match '^refs/tags/v([0-9]+\.[0-9]+\.[0-9]+)$') { $Matches[1] } else { '0.4.1' }
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DAppVersion=$version" "packaging\windows\StudyCoach.iss"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Sign installer (mandatory for tags)
         env:
@@ -123,6 +127,10 @@ jobs:
         with:
           name: StudyCoach-Windows
           path: dist
+      - name: Independently verify downloaded release hashes
+        run: |
+          cd dist
+          sha256sum -c SHA256SUMS.txt
       - name: Publish signed release with checksums
         uses: softprops/action-gh-release@v2
         with:
