@@ -846,33 +846,31 @@ function draftKey(id) {
 
 
 
-function loadDraft(problem) {
-
-
-
-  try {
-
-
-
-    return localStorage.getItem(draftKey(problem.id)) || problem.starter;
-
-
-
-  } catch (_) {
-
-
-
-    return problem.starter;
-
-
-
-  }
-
-
-
+// Repair only an untouched copy of the old starter template. Never rewrite
+// user-edited code, even when it contains many intentional blank lines.
+function isUneditedLegacyStarter(draft, starter) {
+  if (typeof draft !== "string" || !draft.includes("\n\n\n\n")) return false;
+  const canonical = draft.replace(/\r\n?/g, "\n").replace(/\n{4}/g, "\n");
+  const originalTemplate = starter.replace(
+    "#include <vector>\n\nusing namespace std;",
+    "#include <vector>\nusing namespace std;"
+  );
+  return canonical === originalTemplate;
 }
 
-
+function loadDraft(problem) {
+  try {
+    const key = draftKey(problem.id);
+    const draft = localStorage.getItem(key);
+    if (!draft) return problem.starter;
+    if (!isUneditedLegacyStarter(draft, problem.starter)) return draft;
+    // Only legacy, unedited starter drafts are migrated and saved once.
+    localStorage.setItem(key, problem.starter);
+    return problem.starter;
+  } catch (_) {
+    return problem.starter;
+  }
+}
 
 function saveDraft() {
 
