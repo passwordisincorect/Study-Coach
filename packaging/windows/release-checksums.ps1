@@ -24,7 +24,20 @@ $actualLines = @([IO.File]::ReadAllLines($manifest) | Where-Object { $_ -ne '' }
 if ($actualLines.Count -ne $names.Count) { throw 'Unexpected number of checksum entries' }
 for ($i = 0; $i -lt $names.Count; $i++) {
     $name = $names[$i]
-    if ($actualLines[$i] -cnotmatch '^([a-f0-9]{64})  (.+)$' -or $Matches[2] -cne $name) {
+    if (-not ($actualLines[$i] -cmatch '^([a-f0-9]{64})  (.+)
+        throw "Unexpected SHA256SUMS entry at position $i"
+    }
+    $expected = $Matches[1]
+    $file = Join-Path $dir $name
+    if (-not (Test-Path -LiteralPath $file -PathType Leaf)) { throw "Missing release asset: $name" }
+    $actual = (Get-FileHash -LiteralPath $file -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($actual -cne $expected) { throw "SHA-256 mismatch: $name" }
+}
+Write-Output 'CHECKSUMS_VERIFIED=2'
+)) {
+        throw "Malformed SHA256SUMS entry at position $i"
+    }
+    if ($Matches[2] -cne $name) {
         throw "Unexpected SHA256SUMS entry at position $i"
     }
     $expected = $Matches[1]
