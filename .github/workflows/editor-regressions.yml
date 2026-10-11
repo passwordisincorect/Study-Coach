@@ -1,0 +1,26 @@
+name: Editor regressions
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  editor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test C++ starter and application
+        run: python -m unittest -q test_editor_starter test_progression test_source_progress test_public_release
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: node --check static/app.js
+      - name: Test safe localStorage draft migration
+        run: node scripts/test_editor_drafts.mjs
