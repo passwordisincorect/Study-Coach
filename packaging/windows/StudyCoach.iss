@@ -1,5 +1,7 @@
 #define AppName "Study Coach"
-#define AppVersion "0.4.0"
+#ifndef AppVersion
+#define AppVersion "0.4.1"
+#endif
 [Setup]
 AppId={{F2EE559C-A3A9-43B3-A8EC-1C543AFF04AE}
 AppName={#AppName}
