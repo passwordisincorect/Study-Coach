@@ -114,7 +114,7 @@ jobs:
             "$sha  $name"
           }
           $manifest = Join-Path (Resolve-Path 'dist').Path 'SHA256SUMS.txt'
-          [IO.File]::WriteAllText($manifest, (($lines -join "\n") + "\n"), [Text.Encoding]::ASCII)
+          [IO.File]::WriteAllText($manifest, (($lines -join [char]10) + [char]10), [Text.Encoding]::ASCII)
           if ((Get-Content -LiteralPath $manifest).Count -ne 2) { throw 'Checksum manifest must contain two entries' }
           Write-Output 'SHA256SUMS_CREATED=2'
       - name: Upload validated release files
