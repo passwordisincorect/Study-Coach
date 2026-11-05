@@ -74,7 +74,7 @@ The approval manifest pins SHA-256 hashes for all 270 packaged exercises (31–3
 
 ## Extensions
 
-The `browser-extension/` folder provides optional YouTube progress tracking (load unpacked on Chrome, Edge or Brave). The `vscode-extension/` folder contains an optional local VS Code extension.
+The [`browser-extension/`](browser-extension/) folder provides optional YouTube progress tracking (load unpacked on Chrome, Edge or Brave; see its [installation guide](browser-extension/README.md)). A `vscode-extension/` directory is **not included in the current repository**; do not follow older VS Code extension installation instructions until it is published.
 
 ## License
 
