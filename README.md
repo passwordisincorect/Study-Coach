@@ -74,7 +74,9 @@ The approval manifest pins SHA-256 hashes for all 270 packaged exercises (31–3
 
 ## Extensions
 
-The [`browser-extension/`](browser-extension/) folder provides optional YouTube progress tracking (load unpacked on Chrome, Edge or Brave; see its [installation guide](browser-extension/README.md)). A `vscode-extension/` directory is **not included in the current repository**; do not follow older VS Code extension installation instructions until it is published.
+The [`browser-extension/`](browser-extension/) folder provides optional YouTube progress tracking (load unpacked on Chrome, Edge or Brave; see its [installation guide](browser-extension/README.md)). The [`vscode-extension/`](vscode-extension/) folder provides a local VS Code extension (version `0.1.0`, VS Code `^1.95.0`) for starting an exercise and recording outcomes in the local Study Coach server.
+
+On Windows, run `./scripts/install-vscode-extension.ps1` from the repository root, then reload the VS Code window. **Caution:** this installation script deletes and replaces the existing `%USERPROFILE%\.vscode\extensions\local.study-coach-0.1.0` directory, if present; back up any local modifications first. The extension's `studyCoach.serverUrl` setting defaults to `http://127.0.0.1:8780`. The Study Coach server must be running for progress submission.
 
 ## License
 
